@@ -5,9 +5,15 @@
 #include <fstream>
 
 #include "../include/ControleLocacao.h"
-
+/*----------------------------------------------------
+* Classe ControleLocacao
+*-----------------------------------------------------
+* Construtor default da classe ControleLocacao.     */
 ControleLocacao::ControleLocacao() {}
 
+/* Lê um arquivo .txt e cadastra filmes a partir dele,
+*  verificando se é DVD/Fita, de acordo com o prímeiro 
+*  dígito (que é um bool, vide o construtor).       */
 void ControleLocacao::lerAquivo() {
   std::cout << "LA <Nome do Arquivo>" << std::endl;
   std::ifstream infile("thefile.txt");
@@ -27,6 +33,7 @@ void ControleLocacao::lerAquivo() {
   }
 }
 
+/* Cadastra um filme de acordo com o que é desejado. */
 void ControleLocacao::cadastrarFilme() {
   std::cout << "CF <Tipo: F|D> <quantidade> <código> <título> <categoria no caso de DVD>" << std::endl;
   bool ehDvd; int quantidadeDisponivel, codigoFilme; std::string tituloFilme, categoriaDvd;
@@ -41,21 +48,25 @@ void ControleLocacao::cadastrarFilme() {
   }
 }
 
-void ControleLocacao::removeFita() {
+/* Remove um filme de acordo com o que é desejado. */
+void ControleLocacao::removeFilme() {
   int codigoFilme = 0;
   std::cout << "RF <código>: " << std::endl; std::cin >> codigoFilme;
 }
 
+/* Lista os filmes cadastrados atualmente. */
 void ControleLocacao::listaFilme() {
   std::cout << "LF [C|T]" << std::endl;
 }
 
+/* Realiza a devolução de um filme e aumenta a quantidade disponível. */
 void ControleLocacao::devolucaoFilme() {
   std::cout << "DV <CPF>: " << std::endl;
   int cpf;
   std::cin >> cpf;
 }
 
+/* Imprime na tela as funções disponíveis para o operador. */
 void ControleLocacao::imprimeSistema() {
   std::cout << "Selecione uma opção.\n"
             << "----------------------------\n"
