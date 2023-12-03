@@ -7,8 +7,8 @@ BIN_DIR := bin # or . if you want it in the current directory
 
 EXE := $(BIND_DIR)/projetoFinal
 
-SRC := $(wildcard $(SRC_DIR)/*.c)
-OBJ := $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
+SRC := $(wildcard $(SRC_DIR)/*.cpp)
+OBJ := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC))
 
 CXXFLAGS := -Iinclude -MMD -MP # -I is a preprocessor flag, not a compiler flag
 CFLAGS   := -Wall              # some warnings about bad code
