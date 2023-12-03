@@ -5,9 +5,7 @@
 #include <vector>
 #include <string>
 
-#include "../include/CadastroFilme.h"
-
-class Cliente : public Fita, Dvd {
+class Cliente {
   private:
     std::vector<Cliente> _clientesCadastrados;
     std::vector<int> _dvdsAlugados;
