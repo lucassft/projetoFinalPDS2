@@ -74,6 +74,7 @@ void ControleLocacao::imprimeSistema() {
   std::string entradaUsuario;
   getline(std::cin, entradaUsuario);
   transform(entradaUsuario.begin(), entradaUsuario.end(), entradaUsuario.begin(), ::toupper);
+	if (entradaUsuario == "FS") {std::cout << "Finalizando o sisema..." << std::endl;
   while (entradaUsuario != "FS") {
     if (entradaUsuario == "LA") {lerAquivo();}
     if (entradaUsuario == "CF") {}
@@ -86,5 +87,6 @@ void ControleLocacao::imprimeSistema() {
     if (entradaUsuario == "DV") {}
     getline(std::cin, entradaUsuario);
     transform(entradaUsuario.begin(), entradaUsuario.end(), entradaUsuario.begin(), ::toupper);
-  }
+  	}
+	}
 }

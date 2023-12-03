@@ -4,9 +4,12 @@
 
 #include "../include/CadastroCliente.h"
 
+
 Cliente::Cliente(int cpf, std::string nome) {
-  this->_cpf = cpf;
-  this->_nome = nome;
+	if (cpf > 0) this->_cpf = cpf;
+	else cadastraCliente();
+  if (nome > "0") this->_nome = nome;
+	else cadastraCliente();
 }
 
 int Cliente::tamClientesCadastrados() {

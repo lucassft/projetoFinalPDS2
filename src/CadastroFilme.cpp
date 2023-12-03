@@ -4,10 +4,13 @@
 
 #include "../include/CadastroFilme.h"
 
+
 Filme::Filme(bool ehDvd, int codigoFilme, std::string tituloFilme) {
-  this->_tituloFilme = tituloFilme;
-  this->_codigoFilme = codigoFilme; 
-  this->_ehDvd = ehDvd;
+	if (!(verificaFilme(codigoFilme))) {
+		this->_tituloFilme = tituloFilme;
+		this->_codigoFilme = codigoFilme; 
+		this->_ehDvd = ehDvd;
+	} else std::cout << "Filme já cadastrado." << std::endl;
 }
 
 int Filme::tamFilmesCadastrados() {return _filmesCadastrados.size();};
