@@ -6,6 +6,8 @@
 
 #include "../include/ControleLocacao.h"
 
+ControleLocacao::ControleLocacao() {}
+
 void ControleLocacao::lerAquivo() {
   std::cout << "LA <Nome do Arquivo>" << std::endl;
   std::ifstream infile("thefile.txt");
@@ -42,8 +44,6 @@ void ControleLocacao::cadastrarFilme() {
 void ControleLocacao::removeFita() {
   int codigoFilme = 0;
   std::cout << "RF <código>: " << std::endl; std::cin >> codigoFilme;
-  Filme filme;
-  filme.removeFilme(codigoFilme);
 }
 
 void ControleLocacao::listaFilme() {

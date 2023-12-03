@@ -14,7 +14,7 @@ class Filme {
 
 
   public:
-    Filme(); 
+    Filme();
     Filme(bool ehDvd, int codigoFilme, std::string tituloFilme);
     int tamFilmesCadastrados();
     void adicionaFilmesCadastrados(Filme filme);
@@ -31,10 +31,8 @@ class Dvd : public Filme {
   
 
   public:
-    Dvd();
-    Dvd(bool ehDvd, int quantidadeDisponivel, int codigoFilme, std::string categoriaDvd, std::string tituloFilme) : 
-        Filme(ehDvd, codigoFilme, tituloFilme){};
-    void cadastraDvd() {};
+    Dvd(bool ehDvd, int quantidadeDisponivel, int codigoFilme, std::string categoriaDvd, std::string tituloFilme);
+    void cadastraDvd();
 };
 
 class Fita : public Filme {
@@ -46,9 +44,7 @@ class Fita : public Filme {
 
 
   public: 
-    Fita();
-    Fita(bool ehDvd, int quantidadeDisponivel, int codigoFilme, std::string tituloFilme) : 
-        Filme(ehDvd, codigoFilme, tituloFilme) {};
+    Fita(bool ehDvd, int quantidadeDisponivel, int codigoFilme, std::string tituloFilme);
     bool verificaQuantidadeDisponivel();
     void cadastraFita();
 };

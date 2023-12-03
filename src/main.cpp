@@ -1,6 +1,6 @@
-#include <CadastroCliente.h>
-#include <CadastroFilme.h>
-#include <ControleLocacao.h>
+#include "../include/CadastroCliente.h"
+#include "../include/CadastroFilme.h"
+#include "../include/ControleLocacao.h"
 
 int main() {
   ControleLocacao Locadora;

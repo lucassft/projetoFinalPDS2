@@ -16,16 +16,16 @@ class Cliente {
 
   public:
     Cliente(int cpf, std::string nome);
-    int tamClientesCadastrados() {};
-    void cadastraCliente() {};
-    void imprimeCliente(int cpf) {};
-    bool verificaCliente(int cpf) {};
-    void querCadastrar() {};
-    void clienteDevolveu() {};
-    void removeCliente() {};
-    std::string getNomeCliente() {};
-    int getCpfCliente() {};
-    void listaCliente() {};
+    int tamClientesCadastrados();
+    void cadastraCliente();
+    void imprimeCliente(int cpf);
+    bool verificaCliente(int cpf);
+    void querCadastrar();
+    void clienteDevolveu();
+    void removeCliente();
+    std::string getNomeCliente();
+    int getCpfCliente();
+    void listaCliente();
 };
 
 #endif 
