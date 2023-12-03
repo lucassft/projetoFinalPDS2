@@ -4,9 +4,6 @@ LIB_DIR        := lib
 INC_DIR        := include
 OBJ_DIR        := obj
 
-SRCEXTS     := .c .C .cc .cpp .CPP .c++ .cxx .cp
-HDREXTS     := .h .H .hh .hpp .HPP .h++ .hxx .hp
-
 TARGETS        := $(BIN_DIR)/projetoFinalPDS2
 SOURCES        := $(shell find src -name "*.cpp")
 HEADERS        := $(shell find include -name "*.hpp")
