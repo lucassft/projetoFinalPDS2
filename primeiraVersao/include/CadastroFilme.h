@@ -5,6 +5,9 @@
 #include <vector>
 #include <string>
 
+/* Classe criada com o intuito de servir de base para o cadastro de filmes
+		e suas derivadas, como Filmes e Dvd's. */
+
 class Filme {
   private:
     std::vector<Filme> _filmesCadastrados;
@@ -23,6 +26,12 @@ class Filme {
     void imprimeDvdOuFilme(int codigoFilme);
 };
 
+/* Classe filha DVD. Armazena informações
+* - categoria do DVD;
+* - valor da locação;
+* - título da fita
+* - quantidade de unidades disponíveis para posterior locação.*/
+
 class Dvd : public Filme {
   private:
     std::string _categoriaDvd;
@@ -34,6 +43,12 @@ class Dvd : public Filme {
     Dvd(bool ehDvd, int quantidadeDisponivel, int codigoFilme, std::string categoriaDvd, std::string tituloFilme);
     void cadastraDvd();
 };
+
+/* Classe filha fita
+* - armazena informações como se foi rebobinada;
+* - valor da locação;
+* - título da fita
+* - quantidade de unidades disponíveis para posterior locação.*/
 
 class Fita : public Filme {
   private:

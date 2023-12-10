@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 
+/* Classe criada com o intuito de lidar com o cadastro e outras funções
+		relacionadas ao gerenciamento dos clientes */
 
 class Cliente {
   private:
