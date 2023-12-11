@@ -1,12 +1,14 @@
-#include "../include/EspecificacaoCadastroFilme/FitaVideo.hpp"
+#include "FitaVideo.hpp"
+
+FitaVideo::FitaVideo() {}
 
 void FitaVideo::clienteAlugaFitaVideo(int codigoFita) {
 	if (verificaSaldoFitaVideo(codigoFita)) {
-		for (int i = 0; i < _FitaVideoCadastradas.size(); i++) {
+		for (unsigned int i = 0; i < _FitaVideoCadastradas.size(); i++) {
 			if (_FitaVideoCadastradas[i].getCodigoNumeroFilme() == codigoFita) {
 				_FitaVideoCadastradas[i].diminuiUnidadesDisponiveis();
 			}
-		}
+		} 
 	} else std::cout << "ERRO: Filme <" << codigoFita << "> inexistente" << std::endl;
 }
 
@@ -16,7 +18,7 @@ int FitaVideo::retornaDevolucaoFitaVideo(int codigoFitaVideo, int diasAlugado) {
 }
 
 bool FitaVideo::verificaSaldoFitaVideo(int codigoFitaVideo) {
-	if (verificaCadastroFitaVideo(codigoFitaVideo) && getNumeroUnidadesDisponiveis() > 0) return true;
+	if (verificaCadastroFitaVideo(codigoFitaVideo) && (getNumeroUnidadesDisponiveis() > 0)) return true;
 }
 
 int FitaVideo::qtdFitasVideoCadastrados() {
@@ -28,8 +30,8 @@ bool FitaVideo::verificaCadastroFitaVideo(int codigoFitaVideo) {
 	int tamVetor = qtdFitasVideoCadastrados();
 	for (int i = 0; i < tamVetor; i++) {
 		if (_FitaVideoCadastradas[i].getCodigoNumeroFilme() == codigoFitaVideo) { return true;
-		} else return false; // throw cpf não cadastrado
-	}
+		} 
+	} return false; // throw cpf não cadastrado
 }
 
 FitaVideo::FitaVideo(int codigoNumeroFilme, 
@@ -53,11 +55,9 @@ void FitaVideo::cadastraFitaVideoDoZero() {
 	} else std::cout << "ERRO: código repetido." << std::endl;
 }
 
-void FitaVideo::cadastraFitaVideoParametros(int codigo, std::string titulo, int quantidade) {
-	if (!verificaCadastroFitaVideo(codigo)) {
-		FitaVideo fitaVideo(codigo, titulo, quantidade);
-		_FitaVideoCadastradas.push_back(fitaVideo);
-	} else std::cout << "ERRO: código repetido." << std::endl;
+void FitaVideo::cadastraFitaVideoParametros(FitaVideo& sistemaFitaVideo, int codigoFitaVideo, std::string tituloFitaVideo, int quantidadeDisponivelFitaVideo) {
+	FitaVideo fitavideo(codigoFitaVideo, tituloFitaVideo, quantidadeDisponivelFitaVideo);
+	sistemaFitaVideo._FitaVideoCadastradas.push_back(fitavideo);
 }
 
 void FitaVideo::removeFitaVideo(int codigoFitaVideoRemovido) {
@@ -102,3 +102,5 @@ void FitaVideo::imprimeFitaVideo() {
 									  << " > < FITA >" 
 									  << std::endl;
 }
+
+FitaVideo::~FitaVideo(){};

@@ -1,0 +1,11 @@
+digraph "include" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d44c64559bbebec7f509842c48db8b23 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+    dir_d44c64559bbebec7f509842c48db8b23 [shape=plaintext label="include"];
+  dir_2e1cf0f64139900e58c6559c5f3b3d52 [shape=box label="EspecificacaoCadastroFilme" fillcolor="white" style="filled" URL="dir_2e1cf0f64139900e58c6559c5f3b3d52.html"];
+  }
+  dir_d44c64559bbebec7f509842c48db8b23->dir_2e1cf0f64139900e58c6559c5f3b3d52 [headlabel="9", labeldistance=1.5 headhref="dir_000000_000001.html"];
+}

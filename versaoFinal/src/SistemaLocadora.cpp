@@ -1,15 +1,6 @@
 #include "../include/SistemaLocadora.hpp"
 
-/*
-SistemaLocadora();
-void interfaceSistemaLocadora();
-void imprimeInterfaceSistemaLocadora();
-void lerArquivoCadastro();
-void cadastrarFilme();
-void cadastrarCliente();
-void removerCliente();
-~SistemaLocadora();
-*/
+SistemaLocadora::SistemaLocadora(){}
 
 void SistemaLocadora::imprimeInterfaceSistemaLocadora() {
 	std::cout << "--------------------------------------------------"
@@ -31,49 +22,53 @@ void SistemaLocadora::imprimeInterfaceSistemaLocadora() {
 void SistemaLocadora::interfaceSistemaLocadora(DVD& sistemaDVD, 
                                                FitaVideo& sistemaFitaVideo,
 																							 ControleLocacao& sistemaControleLocacao) {
+	imprimeInterfaceSistemaLocadora();
 	int inputOperadorLocadora{0};
 	std::cin >> inputOperadorLocadora;
 	while(inputOperadorLocadora > 0 && inputOperadorLocadora < 10) {
-		imprimeInterfaceSistemaLocadora();
 		switch (inputOperadorLocadora) {
-		case 1 : lerArquivoCadastro(); break;
-		case 2 : cadastrarFilme(); break;
-		case 3 : removerFilme(); break;
+		case 1 : lerArquivoCadastro(sistemaDVD, sistemaFitaVideo); break;
+		case 2 : cadastrarFilme(sistemaDVD,sistemaFitaVideo); break;
+		case 3 : removerFilme(sistemaDVD, sistemaFitaVideo); break;
 		case 4 : listarFilmesOrdenadosCodigoTitulo(sistemaDVD, sistemaFitaVideo); break;
 		case 5 : cadastrarCliente(sistemaControleLocacao);break;
 		case 6 : removerCliente(sistemaControleLocacao); break;
 		case 7 : listaClienteCodigoNome(sistemaControleLocacao); break;
-		case 8 : aluguelFilme(sistemaControleLocacao); break;
+		case 8 : aluguelFilme(sistemaControleLocacao, sistemaDVD, sistemaFitaVideo); break;
 		case 9 : devolucaoFilme(sistemaControleLocacao, sistemaDVD, sistemaFitaVideo); break;
 		default:
 			break;
-		} std::cin >> inputOperadorLocadora;
+		} 
+		imprimeInterfaceSistemaLocadora(); std::cin >> inputOperadorLocadora;
 	} std::cout << "Finalizando o sistema..." << std::endl;
 }
 
-void SistemaLocadora::lerArquivoCadastro() {
-	bool ehDVD; int quantidade, codigo, categoriaDVD; std::string titulo;
-	inFile.open("inputFile.txt");
-	while ( inFile >> ehDVD >> quantidade >> codigo >> categoriaDVD >> titulo ) {}
-		if (ehDVD) { DVD dvd(codigo, titulo, quantidade, categoriaDVD);
+void SistemaLocadora::lerArquivoCadastro(DVD& sistemaDVD, FitaVideo& sistemaFitaVideo) {
+	bool ehDVD{0}; int quantidade{0}, codigo{0}, categoriaDVD{0}; std::string titulo{'0'};
+	std::ifstream myfile; myfile.open("arquivoCadastro.txt");
+	while ( myfile >> ehDVD >> quantidade >> codigo >> categoriaDVD >> titulo ) {
+		if (ehDVD) {
+			sistemaDVD.cadastraDVDparametros(sistemaDVD, codigo, titulo, quantidade, categoriaDVD);
 		} else FitaVideo fitaVideo(codigo, titulo, quantidade);
+	}
 }
 
-void SistemaLocadora::cadastrarFilme() {
+void SistemaLocadora::cadastrarFilme(DVD& sistemaDVD, FitaVideo& sistemaFitaVideo) {
 	std::cout << "CF <Tipo: F|D> <quantidade> <código> <título> <categoria no caso de DVD>" << std::endl;
-	bool ehDVD; int quantidade, codigo, categoriaDVD; std::string titulo;
-	DVD dvdVerificador; FitaVideo fitaVideoVerificador;
+	bool ehDVD{0}; int quantidade{0}, codigo{0}, categoriaDVD{0}; std::string titulo{'0'};
 	if (ehDVD) {
-		dvdVerificador.cadastraDVDparametros(codigo, titulo, quantidade, categoriaDVD);
+		sistemaDVD.cadastraDVDparametros(sistemaDVD, codigo, titulo, quantidade, categoriaDVD);
 	} else {
-		fitaVideoVerificador.cadastraFitaVideoParametros(codigo, titulo, quantidade);}
+		sistemaFitaVideo.cadastraFitaVideoParametros(sistemaFitaVideo, codigo, titulo, quantidade);}
 }
 
-void SistemaLocadora::removerFilme() {
+void SistemaLocadora::removerFilme(DVD& sistemaDVD, FitaVideo& sistemaFitaVideo) {
 	int codigoRemover{0};
 	std::cout << "RF <código>: "; std::cin >> codigoRemover;
-	DVD dvdVerificador; FitaVideo fitaVideoVerificador;
-	dvdVerificador.removeDVD(codigoRemover); fitaVideoVerificador.removeFitaVideo(codigoRemover);
+	if (sistemaDVD.verificaCadastroDVD(sistemaDVD, codigoRemover)) {
+		sistemaFitaVideo.removeFitaVideo(codigoRemover);}
+	else if (sistemaFitaVideo.verificaCadastroFitaVideo(codigoRemover)) {
+		sistemaFitaVideo.removeFitaVideo(codigoRemover);}
 }
 
 void SistemaLocadora::listarFilmesOrdenadosCodigoTitulo(DVD& sistemaDVD, FitaVideo& sistemaFitaVideo) {
@@ -82,9 +77,8 @@ void SistemaLocadora::listarFilmesOrdenadosCodigoTitulo(DVD& sistemaDVD, FitaVid
 						<<  "\n[2] Título"
 						<< std::endl;
 	int inputUsuario{0}; std::cin >> inputUsuario;
-	if (inputUsuario) {
-		sistemaDVD.listaDVDsCodigo();sistemaFitaVideo.listaFitaVideoCodigo();
-	} else sistemaDVD.listaDVDsTitulo();sistemaFitaVideo.listaFitaVideoTitulo();
+	if (inputUsuario == 1) {sistemaDVD.listaDVDsCodigo();sistemaFitaVideo.listaFitaVideoCodigo();
+	} else if (inputUsuario == 2) {sistemaDVD.listaDVDsTitulo();sistemaFitaVideo.listaFitaVideoTitulo();}
 }
 
 void SistemaLocadora::cadastrarCliente(ControleLocacao& sistemaControleLocacao) {
@@ -108,18 +102,21 @@ void SistemaLocadora::listaClienteCodigoNome(ControleLocacao& sistemaControleLoc
 	} else if (inputUsuario == 2) sistemaControleLocacao.listaClienteNome();
 }
 
-void aluguelFilme(ControleLocacao& sistemaControleLocacao) {
+void SistemaLocadora::aluguelFilme(ControleLocacao& sistemaControleLocacao, DVD& sistemaDVD, FitaVideo& sistemaFitaVideo) {
 	std::cout << "AL <CPF> <Código1> ... <Código N>";
 	int inputCPF{0}, inputCodigoFilme{0};
 	if (sistemaControleLocacao.verificaCPFCadastrado(inputCPF)) {
-		
+		for (int i = 0; i < sistemaControleLocacao.qtdClientesCadastrados(); i++)
+			sistemaControleLocacao.clienteAlugou(inputCPF, inputCodigoFilme, sistemaDVD, sistemaFitaVideo);
 	} else std::cout << "ERRO: CPF inexistente" << std::endl;
 }
 
-void devolucaoFilme(ControleLocacao& sistemaControleLocacao, DVD& sistemaDVD, FitaVideo& sistemaFitaVideo) {
+void SistemaLocadora::devolucaoFilme(ControleLocacao& sistemaControleLocacao, DVD& sistemaDVD, FitaVideo& sistemaFitaVideo) {
 	std::cout << "DV <CPF>";
 	int inputCPF{0};
 	if (sistemaControleLocacao.verificaCPFCadastrado(inputCPF)) {
 		sistemaControleLocacao.clienteDevolveu(inputCPF, sistemaDVD, sistemaFitaVideo);
 	}
 }
+
+SistemaLocadora::~SistemaLocadora(){}

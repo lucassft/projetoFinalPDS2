@@ -1,16 +1,16 @@
 #include "../include/ControleLocacao.hpp"
 
+ControleLocacao::ControleLocacao(){}
+
 int ControleLocacao::qtdClientesCadastrados() const {
 	int qtdClientesCadastrados{0}; qtdClientesCadastrados = _ClientesCadastrados.size();
 	return qtdClientesCadastrados;
 }
 
 bool ControleLocacao::verificaCPFCadastrado(int inputCPF) {
-	int tamVetor = qtdClientesCadastrados();
-	for (int i = 0; i < tamVetor; i++) {
-		if (_ClientesCadastrados[i].getCPF() == inputCPF) { return true;
-		} else return false; // throw cpf não cadastrado
-	}
+	for (unsigned int i = 0; i < _ClientesCadastrados.size(); i++) {
+		if (_ClientesCadastrados[i].getCPF() == inputCPF) return true;
+	} return false;
 }
 
 void ControleLocacao::cadastraCliente() {
@@ -36,21 +36,21 @@ void ControleLocacao::removeCliente(int cpfClienteRemovido) {
 }
 
 void ControleLocacao::listaClienteCPF() {
-	std::sort(_ClientesCadastrados.begin(),_ClientesCadastrados.end(), SortCodigoFitaVideo(1));
+	std::sort(_ClientesCadastrados.begin(),_ClientesCadastrados.end(), SortClienteNomeCPF(1));
 	for (unsigned int i = 0; i < _ClientesCadastrados.size(); i++) {
-		_ClientesCadastrados.at(i).imprimeCliente();
+		_ClientesCadastrados[i].imprimeCliente();
 	}
 }
 
 void ControleLocacao::listaClienteNome() {
-	std::sort(_ClientesCadastrados.begin(),_ClientesCadastrados.end(), SortCodigoFitaVideo(0));
+	std::sort(_ClientesCadastrados.begin(),_ClientesCadastrados.end(), SortClienteNomeCPF(0));
 	for (unsigned int i = 0; i < _ClientesCadastrados.size(); i++) {
-		_ClientesCadastrados.at(i).imprimeCliente(); 
+		_ClientesCadastrados[i].imprimeCliente(); 
 	}
 }
 
 void ControleLocacao::clienteDevolveu(int inputCPF, DVD& dvdSistema, FitaVideo& fitaVideoSistema) {
-	for (int i = 0; i < _ClientesCadastrados.size(); i++) {
+	for (unsigned int i = 0; i < _ClientesCadastrados.size(); i++) {
 		if (_ClientesCadastrados[i].getCPF() == inputCPF) {
 			_ClientesCadastrados[i].imprimeCliente();
 			std::cout << " devolveu os filmes:" << std::endl;
@@ -58,3 +58,15 @@ void ControleLocacao::clienteDevolveu(int inputCPF, DVD& dvdSistema, FitaVideo& 
 		}
 	}
 }
+
+void ControleLocacao::clienteAlugou(int inputCPF, int codigoFilme, DVD& dvdSistema, FitaVideo& fitaVideoSistema) {
+	if (verificaCPFCadastrado(inputCPF)) {
+		for (unsigned int i = 0; i < _ClientesCadastrados.size(); i++) {
+			if (_ClientesCadastrados[i].getCPF() == inputCPF) {
+				_ClientesCadastrados[i].clienteAlugaCodigo(codigoFilme, dvdSistema, fitaVideoSistema);
+			}
+		}
+	} else std::cout << "<" << inputCPF <<"> não cadastrado no sistema." << std::endl;
+}
+
+ControleLocacao::~ControleLocacao(){}
