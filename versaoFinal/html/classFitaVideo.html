@@ -91,8 +91,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a58e30978abb489611aad3468a7ab565d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0121c4fc7e2532277706df64b09ce18d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFitaVideo.html#a0121c4fc7e2532277706df64b09ce18d">cadastraFitaVideoDoZero</a> ()</td></tr>
 <tr class="separator:a0121c4fc7e2532277706df64b09ce18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5e61e8bc999c9886527ffceeaa2433f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFitaVideo.html#ad5e61e8bc999c9886527ffceeaa2433f">cadastraFitaVideoParametros</a> (int, std::string, int)</td></tr>
-<tr class="separator:ad5e61e8bc999c9886527ffceeaa2433f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac482a323971ec85d24006bb3f804a008"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFitaVideo.html#ac482a323971ec85d24006bb3f804a008">cadastraFitaVideoParametros</a> (<a class="el" href="classFitaVideo.html">FitaVideo</a> &amp;, int, std::string, int)</td></tr>
+<tr class="separator:ac482a323971ec85d24006bb3f804a008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39d1a4d92ea21d9d1d1663ffec265fca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFitaVideo.html#a39d1a4d92ea21d9d1d1663ffec265fca">verificaCadastroFitaVideo</a> (int)</td></tr>
 <tr class="separator:a39d1a4d92ea21d9d1d1663ffec265fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a346998037a25bb54822ad86f66a55366"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFitaVideo.html#a346998037a25bb54822ad86f66a55366">removeFitaVideo</a> (int)</td></tr>
@@ -203,6 +203,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que faz as mudanças de acordo com a devolução de um <a class="el" href="classDVD.html">DVD</a>. </p>
 
 </div>
 </div>
@@ -221,11 +222,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Construtor que não recebe nenhum parâmetro. Ou seja, recebe eles do usuário. </p>
 
 </div>
 </div>
-<a id="ad5e61e8bc999c9886527ffceeaa2433f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5e61e8bc999c9886527ffceeaa2433f">&#9670;&nbsp;</a></span>cadastraFitaVideoParametros()</h2>
+<a id="ac482a323971ec85d24006bb3f804a008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac482a323971ec85d24006bb3f804a008">&#9670;&nbsp;</a></span>cadastraFitaVideoParametros()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,20 +235,26 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void FitaVideo::cadastraFitaVideoParametros </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classFitaVideo.html">FitaVideo</a> &amp;&#160;</td>
+          <td class="paramname"><em>sistemaFitaVideo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>codigo</em>, </td>
+          <td class="paramname"><em>codigoFitaVideo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>titulo</em>, </td>
+          <td class="paramname"><em>tituloFitaVideo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>quantidade</em>&#160;</td>
+          <td class="paramname"><em>quantidadeDisponivelFitaVideo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -255,6 +263,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Construtor que não recebe nenhum parâmetro. Ou seja, recebe eles do usuário. </p>
 
 </div>
 </div>
@@ -273,6 +282,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que faz as mudanças de acordo com o aluguel de uma fita de vídeo. </p>
 
 </div>
 </div>
@@ -291,6 +301,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Retorna uma fita de vídeo cadastrada a partir de um parâmetro para um loop. </p>
 
 </div>
 </div>
@@ -309,6 +320,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Retorna uma fita de vídeo cadastrada a partir de um código de identificaçao como parâmetro. </p>
 
 </div>
 </div>
@@ -326,6 +338,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Imprime as informações de uma fita de vídeo. </p>
 
 </div>
 </div>
@@ -343,6 +356,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Lista um vetor de fita de vídeo em ordem crescente a partir do código de identificação. </p>
 
 </div>
 </div>
@@ -360,6 +374,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Lista um vetor de fita de vídeo em ordem crescente a partir do título do filme. </p>
 
 </div>
 </div>
@@ -377,6 +392,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que retorna a quantidade de fitas cadastradas em vetor de fitas de vídeo. </p>
 
 </div>
 </div>
@@ -395,6 +411,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que remove uma fita de vídeo a partir do código de identificação. </p>
 
 </div>
 </div>
@@ -423,6 +440,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que faz as mudanças de acordo com a devolução de uma fita de vídeo. </p>
 
 </div>
 </div>
@@ -441,6 +459,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que verifica o cadastro de uma fita de video a partir do código de identificação. </p>
 
 </div>
 </div>
@@ -459,7 +478,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Construtor que receba como parâmetro o código de identificação do filme, título e quantidade de unidades disponíveis. </p>
 
 </div>
 </div>

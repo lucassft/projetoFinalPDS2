@@ -9,29 +9,32 @@ void DVD::clienteAlugaDVD(DVD& sistemaDVD, int codigoDVD) {
 				sistemaDVD._DVDsCadastrados[i].diminuiUnidadesDisponiveis();
 			}
 		}
-	} else std::cout << "ERRO: Filme <" << codigoDVD << "> inexistente" << std::endl;
+	} else throw std::invalid_argument("ERRO: Filme inexistente");
 }
 
-int DVD::retornaDevolucaoDVD(int codigoFita, int diasAlugado) {
-	int total{0};
-	for (unsigned int i = 0; i < _DVDsCadastrados.size(); i++) {
-		switch (_categoriaDVD) {
-		case 1:
-			total += 20 * diasAlugado;
-			break;
-		case 2: 
-			total += 10 * diasAlugado;
-			break;
-		default:
-			total += 10;
-			break;
-		}
-	} return total;
+int DVD::retornaDevolucaoDVD(DVD& sistemaDVD, int codigoFita, int diasAlugado) {
+	if (verificaCadastroDVD(sistemaDVD, codigoFita)) {
+		int total{0};
+		for (unsigned int i = 0; i < _DVDsCadastrados.size(); i++) {
+			switch (_categoriaDVD) {
+			case 1:
+				total += 20 * diasAlugado;
+				break;
+			case 2: 
+				total += 10 * diasAlugado;
+				break;
+			default:
+				total += 10;
+				break;
+			}
+		} return total;
+	}
+	else throw std::invalid_argument("ERRO: Filme não cadastrado.");
 }
 
 bool DVD::verificaSaldoDVD(DVD& sistemaDVD, int codigoDVD) {
 	if (verificaCadastroDVD(sistemaDVD, codigoDVD) && sistemaDVD.getNumeroUnidadesDisponiveis() > 0) return true;
-	else return false;
+	else throw std::invalid_argument("ERRO: Filme não cadastrado.");
 }
 
 int DVD::qtdDVDsCadastrados() {
@@ -41,8 +44,10 @@ int DVD::qtdDVDsCadastrados() {
 
 DVD::DVD(int codigoNumeroFilme, std::string tituloFilme, int numeroUnidadesDisponiveis,
 							int categoriaDVD) : Filme(codigoNumeroFilme, tituloFilme, numeroUnidadesDisponiveis) {
-	_categoriaDVD = categoriaDVD;
-	setDVD();
+	if (categoriaDVD > 0 && categoriaDVD << 4) {
+		_categoriaDVD = categoriaDVD;
+		setDVD();
+	} else throw std::invalid_argument("Categoria DVD inválida.");
 }
 
 void DVD::cadastraDVDdoZero(DVD& sistemaDVD) {
@@ -54,13 +59,14 @@ void DVD::cadastraDVDdoZero(DVD& sistemaDVD) {
 		DVD dvd(codigoDVD, tituloDVD, quantidadeDisponivelFitaVideo, rebobinada);
 		sistemaDVD._DVDsCadastrados.push_back(dvd);
 		std::cout << "Filme <" << codigoDVD << "> cadastrado com sucesso." << std::endl;
-	} else std::cout << "ERRO: código repetido." << std::endl;
+	} else throw std::invalid_argument("ERRO: código repetido."); 
 }
 
-void DVD::cadastraDVDparametros(DVD& sistemaDVD, int codigo, std::string titulo, int quantidade, int categoriaDVD) {
-	if (!verificaCadastroDVD(sistemaDVD, codigo)) {
-		DVD dvd(codigo, titulo, quantidade, categoriaDVD);
+void DVD::cadastraDVDparametros(DVD& sistemaDVD, int codigoDVD, std::string tituloDVD, int quantidade, int categoriaDVD) {
+	if (!verificaCadastroDVD(sistemaDVD, codigoDVD)) {
+		DVD dvd(codigoDVD, tituloDVD, quantidade, categoriaDVD);
 		sistemaDVD._DVDsCadastrados.push_back(dvd);
+		std::cout << "Filme <" << codigoDVD << "> cadastrado com sucesso." << std::endl;
 	}
 }
 
@@ -72,7 +78,7 @@ void DVD::removeDVD(DVD& sistemaDVD, int codigoDVD) {
 				_DVDsCadastrados.erase(_DVDsCadastrados.begin() + i);	
 			} 
 		} std::cout << "Filme <" << codigoDVD << "> removido com sucesso" << std::endl;
-	} else std::cout << "ERRO: dados incorretos." << std::endl;
+	} else throw std::invalid_argument("ERRO: dados incorretos.");
 }
 
 bool DVD::verificaCadastroDVD(DVD& sistemaDVD, int codigoDVD) {
@@ -80,7 +86,7 @@ bool DVD::verificaCadastroDVD(DVD& sistemaDVD, int codigoDVD) {
 	for (unsigned int i = 0; i < tamVetor; i++) {
 		if (_DVDsCadastrados[i].getCodigoNumeroFilme() == codigoDVD) { return true;
 		} 
-	} return false; // throw cpf não cadastrado
+	} throw std::invalid_argument("ERRO: CPF não cadastrado.");
 }
 
 DVD DVD::getDVDsCadastrados(int i) {

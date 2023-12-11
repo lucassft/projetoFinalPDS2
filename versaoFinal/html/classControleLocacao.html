@@ -89,6 +89,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae074afed01e1ebe01d63abb3ce377ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bb60a5bdc7d354586ce3a9a749ee8c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControleLocacao.html#a4bb60a5bdc7d354586ce3a9a749ee8c4">clienteDevolveu</a> (int, <a class="el" href="classDVD.html">DVD</a> &amp;, <a class="el" href="classFitaVideo.html">FitaVideo</a> &amp;)</td></tr>
 <tr class="separator:a4bb60a5bdc7d354586ce3a9a749ee8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b68e98928ec1513acd16b748c70210"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControleLocacao.html#af9b68e98928ec1513acd16b748c70210">clienteAlugou</a> (int, int, <a class="el" href="classDVD.html">DVD</a> &amp;, <a class="el" href="classFitaVideo.html">FitaVideo</a> &amp;)</td></tr>
+<tr class="separator:af9b68e98928ec1513acd16b748c70210"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43a981125851689b626b504083776402"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControleLocacao.html#a43a981125851689b626b504083776402">~ControleLocacao</a> ()</td></tr>
 <tr class="separator:a43a981125851689b626b504083776402"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -107,6 +109,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Construtor default de uma classe Controle Locação. </p>
 
 </div>
 </div>
@@ -124,6 +127,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Destrutor default da classe Controle Locação. </p>
 
 </div>
 </div>
@@ -142,6 +146,48 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que cadastra um cliente. </p>
+
+</div>
+</div>
+<a id="af9b68e98928ec1513acd16b748c70210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b68e98928ec1513acd16b748c70210">&#9670;&nbsp;</a></span>clienteAlugou()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControleLocacao::clienteAlugou </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>inputCPF</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>codigoFilme</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDVD.html">DVD</a> &amp;&#160;</td>
+          <td class="paramname"><em>dvdSistema</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classFitaVideo.html">FitaVideo</a> &amp;&#160;</td>
+          <td class="paramname"><em>fitaVideoSistema</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função que armazena os <a class="el" href="classDVD.html">DVD</a>'s e fitas de vídeo alugadas por um determinado a cliente, passando por um verificador se esse cliente já está cadastrado no sistema. </p>
 
 </div>
 </div>
@@ -176,6 +222,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que retorna os filmes alugados por um cliente, de acordo com o valor devido para cada tipo de mídia e suas condições. </p>
 
 </div>
 </div>
@@ -193,6 +240,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Lista um vetor de clientes cadastrados em ordem crescente a partir do CPF. </p>
 
 </div>
 </div>
@@ -210,6 +258,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Lista um vetor de clientes cadastrados em ordem crescente a partir do nome. </p>
 
 </div>
 </div>
@@ -227,6 +276,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que retorna a quantidade de clientes cadastrados no sistema. </p>
 
 </div>
 </div>
@@ -245,6 +295,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que remove um cliente do sistema a partir do CPF. </p>
 
 </div>
 </div>
@@ -263,6 +314,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que verifica se um cliente de determinado CPF está cadastrado no sistema. </p>
 
 </div>
 </div>

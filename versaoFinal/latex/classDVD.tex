@@ -19,15 +19,15 @@ Collaboration diagram for DVD\+:
 \item 
 \mbox{\hyperlink{classDVD_adafb589e061e9752395529936abb9942}{DVD}} (int, std\+::string, int, int)
 \item 
-void \mbox{\hyperlink{classDVD_a80171c80cb8b8aa34fb871de8aa5fce7}{cadastra\+DVDdo\+Zero}} ()
+void \mbox{\hyperlink{classDVD_a191c50e608cbcebc3739ef9e3a5f211f}{cadastra\+DVDdo\+Zero}} (\mbox{\hyperlink{classDVD}{DVD}} \&)
 \item 
-void \mbox{\hyperlink{classDVD_a47c1fdd0c098afa8d944a7fb99d20f48}{cadastra\+DVDparametros}} (int, std\+::string, int, int)
+void \mbox{\hyperlink{classDVD_aee592f8735e9c328594f2d90f3e67f55}{cadastra\+DVDparametros}} (\mbox{\hyperlink{classDVD}{DVD}} \&, int, std\+::string, int, int)
 \item 
-void \mbox{\hyperlink{classDVD_a3f1fdf46cab4641b601318bbee5fa603}{remove\+DVD}} (int)
+void \mbox{\hyperlink{classDVD_aff21d97c561df19a600ee429ea20f6ce}{remove\+DVD}} (\mbox{\hyperlink{classDVD}{DVD}} \&, int)
 \item 
-bool \mbox{\hyperlink{classDVD_a6186896040bbac1bc23e7761fe48fc24}{verifica\+Cadastro\+DVD}} (int)
+bool \mbox{\hyperlink{classDVD_a2095ce6c6d7b0025147a2ee0c53adfaf}{verifica\+Cadastro\+DVD}} (\mbox{\hyperlink{classDVD}{DVD}} \&, int)
 \item 
-bool \mbox{\hyperlink{classDVD_a78344439d02559708060eaebf6dfd548}{verifica\+Saldo\+DVD}} (int)
+bool \mbox{\hyperlink{classDVD_aeeb1badc3289eb151c4766fdb4cd06b3}{verifica\+Saldo\+DVD}} (\mbox{\hyperlink{classDVD}{DVD}} \&, int)
 \item 
 int \mbox{\hyperlink{classDVD_ade6431b1140eb97ed59e4cc8a5623d13}{qtd\+DVDs\+Cadastrados}} ()
 \item 
@@ -41,7 +41,7 @@ void \mbox{\hyperlink{classDVD_a47ffa5dddb3eb2000cdafb779c3a6f87}{lista\+DVDs\+T
 \item 
 void \mbox{\hyperlink{classDVD_ab69f17509682429cbbea243a46399b4f}{imprime\+DVD}} ()
 \item 
-void \mbox{\hyperlink{classDVD_a14252c89c1da0957fb581b75176516f5}{cliente\+Aluga\+DVD}} (int)
+void \mbox{\hyperlink{classDVD_aaafa7f096663ce3d950b7226a56c8c6d}{cliente\+Aluga\+DVD}} (\mbox{\hyperlink{classDVD}{DVD}} \&, int)
 \item 
 int \mbox{\hyperlink{classDVD_aed56a6ba193d55e77f9d1c9befcf08b7}{retorna\+Devolucao\+DVD}} (int, int)
 \item 
@@ -56,13 +56,13 @@ int \mbox{\hyperlink{classDVD_aed56a6ba193d55e77f9d1c9befcf08b7}{retorna\+Devolu
 \doxysubsubsection{\texorpdfstring{DVD()}{DVD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily DVD\+::\+DVD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_adafb589e061e9752395529936abb9942}\label{classDVD_adafb589e061e9752395529936abb9942}} 
+Construtor default da classe \mbox{\hyperlink{classDVD}{DVD}}. \mbox{\Hypertarget{classDVD_adafb589e061e9752395529936abb9942}\label{classDVD_adafb589e061e9752395529936abb9942}} 
 \index{DVD@{DVD}!DVD@{DVD}}
 \index{DVD@{DVD}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{DVD()}{DVD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily DVD\+::\+DVD (\begin{DoxyParamCaption}\item[{int}]{codigo\+Numero\+Filme,  }\item[{std\+::string}]{titulo\+Filme,  }\item[{int}]{numero\+Unidades\+Disponiveis,  }\item[{int}]{categoria\+DVD }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_ac930d61c8e18a1adee751e9b53e29073}\label{classDVD_ac930d61c8e18a1adee751e9b53e29073}} 
+Construtor que recebe código, título, número de unidades disponíveis e categoria de um \mbox{\hyperlink{classDVD}{DVD}}. \mbox{\Hypertarget{classDVD_ac930d61c8e18a1adee751e9b53e29073}\label{classDVD_ac930d61c8e18a1adee751e9b53e29073}} 
 \index{DVD@{DVD}!````~DVD@{$\sim$DVD}}
 \index{````~DVD@{$\sim$DVD}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{$\sim$DVD()}{~DVD()}}
@@ -71,85 +71,85 @@ int \mbox{\hyperlink{classDVD_aed56a6ba193d55e77f9d1c9befcf08b7}{retorna\+Devolu
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classDVD_a80171c80cb8b8aa34fb871de8aa5fce7}\label{classDVD_a80171c80cb8b8aa34fb871de8aa5fce7}} 
+\mbox{\Hypertarget{classDVD_a191c50e608cbcebc3739ef9e3a5f211f}\label{classDVD_a191c50e608cbcebc3739ef9e3a5f211f}} 
 \index{DVD@{DVD}!cadastraDVDdoZero@{cadastraDVDdoZero}}
 \index{cadastraDVDdoZero@{cadastraDVDdoZero}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{cadastraDVDdoZero()}{cadastraDVDdoZero()}}
-{\footnotesize\ttfamily void DVD\+::cadastra\+DVDdo\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void DVD\+::cadastra\+DVDdo\+Zero (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_a47c1fdd0c098afa8d944a7fb99d20f48}\label{classDVD_a47c1fdd0c098afa8d944a7fb99d20f48}} 
+Construtor que não recebe parâmetros, mas instrui \char`\"{}do zero\char`\"{} que leva aos parâmetros necessários para a construção de um um \mbox{\hyperlink{classDVD}{DVD}}. \mbox{\Hypertarget{classDVD_aee592f8735e9c328594f2d90f3e67f55}\label{classDVD_aee592f8735e9c328594f2d90f3e67f55}} 
 \index{DVD@{DVD}!cadastraDVDparametros@{cadastraDVDparametros}}
 \index{cadastraDVDparametros@{cadastraDVDparametros}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{cadastraDVDparametros()}{cadastraDVDparametros()}}
-{\footnotesize\ttfamily void DVD\+::cadastra\+DVDparametros (\begin{DoxyParamCaption}\item[{int}]{codigo,  }\item[{std\+::string}]{titulo,  }\item[{int}]{quantidade,  }\item[{int}]{categoria\+DVD }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void DVD\+::cadastra\+DVDparametros (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{int}]{codigo,  }\item[{std\+::string}]{titulo,  }\item[{int}]{quantidade,  }\item[{int}]{categoria\+DVD }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_a14252c89c1da0957fb581b75176516f5}\label{classDVD_a14252c89c1da0957fb581b75176516f5}} 
+Construtor que cadastra um novo filme no vetor do sistema que armazena filmes cadastrados, a partir dos parâmetros que foram fornecidos. \mbox{\Hypertarget{classDVD_aaafa7f096663ce3d950b7226a56c8c6d}\label{classDVD_aaafa7f096663ce3d950b7226a56c8c6d}} 
 \index{DVD@{DVD}!clienteAlugaDVD@{clienteAlugaDVD}}
 \index{clienteAlugaDVD@{clienteAlugaDVD}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{clienteAlugaDVD()}{clienteAlugaDVD()}}
-{\footnotesize\ttfamily void DVD\+::cliente\+Aluga\+DVD (\begin{DoxyParamCaption}\item[{int}]{codigo\+Fita }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void DVD\+::cliente\+Aluga\+DVD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{int}]{codigo\+DVD }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_afd388524e0433dfb61f2a1563758230b}\label{classDVD_afd388524e0433dfb61f2a1563758230b}} 
+Função que faz as mudanças de acordo com o aluguel de um \mbox{\hyperlink{classDVD}{DVD}}. \mbox{\Hypertarget{classDVD_afd388524e0433dfb61f2a1563758230b}\label{classDVD_afd388524e0433dfb61f2a1563758230b}} 
 \index{DVD@{DVD}!getDVDsCadastrados@{getDVDsCadastrados}}
 \index{getDVDsCadastrados@{getDVDsCadastrados}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{getDVDsCadastrados()}{getDVDsCadastrados()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classDVD}{DVD}} DVD\+::get\+DVDs\+Cadastrados (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_a65c33c1a9584fccb0997a3d016fba2cd}\label{classDVD_a65c33c1a9584fccb0997a3d016fba2cd}} 
+Retorna um \mbox{\hyperlink{classDVD}{DVD}} cadastrado a partir do índice. \mbox{\Hypertarget{classDVD_a65c33c1a9584fccb0997a3d016fba2cd}\label{classDVD_a65c33c1a9584fccb0997a3d016fba2cd}} 
 \index{DVD@{DVD}!getDVDsCadastradosCodigoFilme@{getDVDsCadastradosCodigoFilme}}
 \index{getDVDsCadastradosCodigoFilme@{getDVDsCadastradosCodigoFilme}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{getDVDsCadastradosCodigoFilme()}{getDVDsCadastradosCodigoFilme()}}
 {\footnotesize\ttfamily int DVD\+::get\+DVDs\+Cadastrados\+Codigo\+Filme (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_ab69f17509682429cbbea243a46399b4f}\label{classDVD_ab69f17509682429cbbea243a46399b4f}} 
+Retorna um \mbox{\hyperlink{classDVD}{DVD}} cadastrado a partir do código de identificação como um parâmetro. \mbox{\Hypertarget{classDVD_ab69f17509682429cbbea243a46399b4f}\label{classDVD_ab69f17509682429cbbea243a46399b4f}} 
 \index{DVD@{DVD}!imprimeDVD@{imprimeDVD}}
 \index{imprimeDVD@{imprimeDVD}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{imprimeDVD()}{imprimeDVD()}}
 {\footnotesize\ttfamily void DVD\+::imprime\+DVD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_aa0be918fd0efcd665b259c328773019f}\label{classDVD_aa0be918fd0efcd665b259c328773019f}} 
+Imprime as informações de um \mbox{\hyperlink{classDVD}{DVD}}. \mbox{\Hypertarget{classDVD_aa0be918fd0efcd665b259c328773019f}\label{classDVD_aa0be918fd0efcd665b259c328773019f}} 
 \index{DVD@{DVD}!listaDVDsCodigo@{listaDVDsCodigo}}
 \index{listaDVDsCodigo@{listaDVDsCodigo}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{listaDVDsCodigo()}{listaDVDsCodigo()}}
 {\footnotesize\ttfamily void DVD\+::lista\+DVDs\+Codigo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_a47ffa5dddb3eb2000cdafb779c3a6f87}\label{classDVD_a47ffa5dddb3eb2000cdafb779c3a6f87}} 
+Lista um vetor de \mbox{\hyperlink{classDVD}{DVD}}\textquotesingle{}s em ordem crescente a partir do código de identificação. \mbox{\Hypertarget{classDVD_a47ffa5dddb3eb2000cdafb779c3a6f87}\label{classDVD_a47ffa5dddb3eb2000cdafb779c3a6f87}} 
 \index{DVD@{DVD}!listaDVDsTitulo@{listaDVDsTitulo}}
 \index{listaDVDsTitulo@{listaDVDsTitulo}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{listaDVDsTitulo()}{listaDVDsTitulo()}}
 {\footnotesize\ttfamily void DVD\+::lista\+DVDs\+Titulo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_ade6431b1140eb97ed59e4cc8a5623d13}\label{classDVD_ade6431b1140eb97ed59e4cc8a5623d13}} 
+Lista um vetor de \mbox{\hyperlink{classDVD}{DVD}}\textquotesingle{}s em ordem crescente a partir do título. \mbox{\Hypertarget{classDVD_ade6431b1140eb97ed59e4cc8a5623d13}\label{classDVD_ade6431b1140eb97ed59e4cc8a5623d13}} 
 \index{DVD@{DVD}!qtdDVDsCadastrados@{qtdDVDsCadastrados}}
 \index{qtdDVDsCadastrados@{qtdDVDsCadastrados}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{qtdDVDsCadastrados()}{qtdDVDsCadastrados()}}
 {\footnotesize\ttfamily int DVD\+::qtd\+DVDs\+Cadastrados (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_a3f1fdf46cab4641b601318bbee5fa603}\label{classDVD_a3f1fdf46cab4641b601318bbee5fa603}} 
+Retorna a quantidade de \mbox{\hyperlink{classDVD}{DVD}}\textquotesingle{}s cadastrados no vetor de cadastro de sistema. \mbox{\Hypertarget{classDVD_aff21d97c561df19a600ee429ea20f6ce}\label{classDVD_aff21d97c561df19a600ee429ea20f6ce}} 
 \index{DVD@{DVD}!removeDVD@{removeDVD}}
 \index{removeDVD@{removeDVD}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{removeDVD()}{removeDVD()}}
-{\footnotesize\ttfamily void DVD\+::remove\+DVD (\begin{DoxyParamCaption}\item[{int}]{codigo\+Remover }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void DVD\+::remove\+DVD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{int}]{codigo\+DVD }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_aed56a6ba193d55e77f9d1c9befcf08b7}\label{classDVD_aed56a6ba193d55e77f9d1c9befcf08b7}} 
+Função que remove um \mbox{\hyperlink{classDVD}{DVD}} a partir do código de filme recebido como parâmetro. \mbox{\Hypertarget{classDVD_aed56a6ba193d55e77f9d1c9befcf08b7}\label{classDVD_aed56a6ba193d55e77f9d1c9befcf08b7}} 
 \index{DVD@{DVD}!retornaDevolucaoDVD@{retornaDevolucaoDVD}}
 \index{retornaDevolucaoDVD@{retornaDevolucaoDVD}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{retornaDevolucaoDVD()}{retornaDevolucaoDVD()}}
 {\footnotesize\ttfamily int DVD\+::retorna\+Devolucao\+DVD (\begin{DoxyParamCaption}\item[{int}]{codigo\+Fita,  }\item[{int}]{dias\+Alugado }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_a6186896040bbac1bc23e7761fe48fc24}\label{classDVD_a6186896040bbac1bc23e7761fe48fc24}} 
+Função que faz as mudanças de acordo com a devolução de um \mbox{\hyperlink{classDVD}{DVD}}. \mbox{\Hypertarget{classDVD_a2095ce6c6d7b0025147a2ee0c53adfaf}\label{classDVD_a2095ce6c6d7b0025147a2ee0c53adfaf}} 
 \index{DVD@{DVD}!verificaCadastroDVD@{verificaCadastroDVD}}
 \index{verificaCadastroDVD@{verificaCadastroDVD}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{verificaCadastroDVD()}{verificaCadastroDVD()}}
-{\footnotesize\ttfamily bool DVD\+::verifica\+Cadastro\+DVD (\begin{DoxyParamCaption}\item[{int}]{codigo\+DVD }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool DVD\+::verifica\+Cadastro\+DVD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{int}]{codigo\+DVD }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classDVD_a78344439d02559708060eaebf6dfd548}\label{classDVD_a78344439d02559708060eaebf6dfd548}} 
+Função que verifica se um \mbox{\hyperlink{classDVD}{DVD}} está cadastrado no sistema de cadastro de \mbox{\hyperlink{classDVD}{DVD}}\textquotesingle{}s a partir do código de identificação. \mbox{\Hypertarget{classDVD_aeeb1badc3289eb151c4766fdb4cd06b3}\label{classDVD_aeeb1badc3289eb151c4766fdb4cd06b3}} 
 \index{DVD@{DVD}!verificaSaldoDVD@{verificaSaldoDVD}}
 \index{verificaSaldoDVD@{verificaSaldoDVD}!DVD@{DVD}}
 \doxysubsubsection{\texorpdfstring{verificaSaldoDVD()}{verificaSaldoDVD()}}
-{\footnotesize\ttfamily bool DVD\+::verifica\+Saldo\+DVD (\begin{DoxyParamCaption}\item[{int}]{codigo\+DVD }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool DVD\+::verifica\+Saldo\+DVD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{int}]{codigo\+DVD }\end{DoxyParamCaption})}
 
-
+Função que verifica se um \mbox{\hyperlink{classDVD}{DVD}} cadastrado no sistema de cadastro de \mbox{\hyperlink{classDVD}{DVD}}\textquotesingle{}s tem saldo, a partir do código de identificação. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

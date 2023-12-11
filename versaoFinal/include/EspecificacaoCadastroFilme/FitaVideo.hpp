@@ -5,6 +5,8 @@
 
 #include <iostream>
 #include <vector>
+#include <stdexcept>
+#include <bitset>    
 
 class FitaVideo : public Filme {
 
@@ -37,13 +39,13 @@ class FitaVideo : public Filme {
 	/**
 	  * 
 	  **/
-		bool verificaSaldoFitaVideo(int);
+		bool verificaSaldoFitaVideo(FitaVideo&, int);
 
 	/**
 	  * Construtor que não recebe nenhum parâmetro. Ou seja,
 		* recebe eles do usuário.
 	  **/
-		void cadastraFitaVideoDoZero();
+		void cadastraFitaVideoDoZero(FitaVideo&);
 
 	/**
 	  * Construtor que não recebe nenhum parâmetro. Ou seja,
@@ -55,13 +57,13 @@ class FitaVideo : public Filme {
 	  * Função que verifica o cadastro de uma fita de video
 		* a partir do código de identificação.
 	  **/
-		bool verificaCadastroFitaVideo(int);
+		bool verificaCadastroFitaVideo(FitaVideo&, int);
 
 	/**
 	  * Função que remove uma fita de vídeo a partir do código
 		* de identificação.
 	  **/
-		void removeFitaVideo(int);
+		void removeFitaVideo(FitaVideo&, int);
 
 	/**
 	  * Função que retorna a quantidade de fitas cadastradas em 
@@ -79,7 +81,7 @@ class FitaVideo : public Filme {
 	  * Retorna uma fita de vídeo cadastrada a partir de um 
 		* código de identificaçao como parâmetro.
 	  **/
-		int getFitaVideoCadastradaCodigoFilme(int i); 
+		int getFitaVideoCadastradaCodigoFilme(FitaVideo&, int i); 
 
 	/**
 	  * Lista um vetor de fita de vídeo em ordem crescente a
@@ -102,7 +104,7 @@ class FitaVideo : public Filme {
 	  * Função que faz as mudanças de acordo com o aluguel de uma 
 		* fita de vídeo.
 	  **/
-		void clienteAlugaFitaVideo(int);
+		void clienteAlugaFitaVideo(FitaVideo&, int);
 
 	/**
 	  * Função que faz as mudanças de acordo com a devolução de uma 

@@ -20,6 +20,7 @@ void ControleLocacao::cadastraCliente() {
 	if (!verificaCPFCadastrado(inputCPF)) {
 		Cliente cliente(inputNome, inputCPF);
 		_ClientesCadastrados.push_back(cliente);
+		std::cout << "Cliente <" << inputCPF << "> cadastrado com sucesso." << std::endl;
 	}
 }
 
@@ -32,7 +33,7 @@ void ControleLocacao::removeCliente(int cpfClienteRemovido) {
 				_ClientesCadastrados.erase(_ClientesCadastrados.begin() + i);
 			}
 		} 
-	} else std::cout << "ERRO: dados incorretos." << std::endl;
+	} else std::invalid_argument("ERRO: dados incorretos");
 }
 
 void ControleLocacao::listaClienteCPF() {
@@ -45,7 +46,7 @@ void ControleLocacao::listaClienteCPF() {
 void ControleLocacao::listaClienteNome() {
 	std::sort(_ClientesCadastrados.begin(),_ClientesCadastrados.end(), SortClienteNomeCPF(0));
 	for (unsigned int i = 0; i < _ClientesCadastrados.size(); i++) {
-		_ClientesCadastrados[i].imprimeCliente(); 
+		_ClientesCadastrados.at(i).imprimeCliente(); 
 	}
 }
 
@@ -66,7 +67,7 @@ void ControleLocacao::clienteAlugou(int inputCPF, int codigoFilme, DVD& dvdSiste
 				_ClientesCadastrados[i].clienteAlugaCodigo(codigoFilme, dvdSistema, fitaVideoSistema);
 			}
 		}
-	} else std::cout << "<" << inputCPF <<"> não cadastrado no sistema." << std::endl;
+	} else std::invalid_argument("ERRO: CPF não cadastrado no sistema.");
 }
 
 ControleLocacao::~ControleLocacao(){}

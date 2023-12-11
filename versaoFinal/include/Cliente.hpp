@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <vector>
+#include <stdexcept>
+#include <bitset>    
 
 /*************************************************************
  * Classe Cliente que irá armazenar todas as informações que 

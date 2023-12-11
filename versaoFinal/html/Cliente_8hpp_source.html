@@ -79,33 +79,53 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classCliente.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCliente.html">Cliente</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        std::string _nome;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">int</span> _cpf;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        std::vector&lt;int&gt; _FitaVideoAlugadas;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        std::vector&lt;int&gt; _DVDsAlugados;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classCliente.html#aae68a2610ea9adcac6464ed39c305073">Cliente</a>(std::string nome, <span class="keywordtype">int</span> cpf);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classCliente.html#a94fab666338676acc92ea411752f5c65">clienteAluga</a>(<a class="code" href="classDVD.html">DVD</a>&amp;, <a class="code" href="classFitaVideo.html">FitaVideo</a>&amp;);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classCliente.html#a9aba1d2afb29614e6cbcba850b619c24">clienteDevolve</a>(<a class="code" href="classDVD.html">DVD</a>&amp;, <a class="code" href="classFitaVideo.html">FitaVideo</a>&amp;);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCliente.html#a3f78e13722ebdb1372067d3cc22fa4f9">getCPF</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::string <a class="code" href="classCliente.html#abfd45b8b07a8549fe4761d00c76a43c3">getNome</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classCliente.html#a9bd6e10a6de0d212ced594f6f4de0cc5">imprimeCliente</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classCliente.html#a29d1d53394350c66363109e33c990b58">   25</a></span>&#160;        <a class="code" href="classCliente.html#a29d1d53394350c66363109e33c990b58">~Cliente</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*************************************************************</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * Classe Cliente que irá armazenar todas as informações que </span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * são pertinentes a um cliente..</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *************************************************************/</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classCliente.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCliente.html">Cliente</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        std::string _nome;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> _cpf;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassCliente_html"><div class="ttname"><a href="classCliente.html">Cliente</a></div><div class="ttdef"><b>Definition:</b> Cliente.hpp:11</div></div>
-<div class="ttc" id="aclassCliente_html_a29d1d53394350c66363109e33c990b58"><div class="ttname"><a href="classCliente.html#a29d1d53394350c66363109e33c990b58">Cliente::~Cliente</a></div><div class="ttdeci">~Cliente()</div></div>
-<div class="ttc" id="aclassCliente_html_a3f78e13722ebdb1372067d3cc22fa4f9"><div class="ttname"><a href="classCliente.html#a3f78e13722ebdb1372067d3cc22fa4f9">Cliente::getCPF</a></div><div class="ttdeci">int getCPF() const</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:50</div></div>
-<div class="ttc" id="aclassCliente_html_a94fab666338676acc92ea411752f5c65"><div class="ttname"><a href="classCliente.html#a94fab666338676acc92ea411752f5c65">Cliente::clienteAluga</a></div><div class="ttdeci">void clienteAluga(DVD &amp;, FitaVideo &amp;)</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:8</div></div>
-<div class="ttc" id="aclassCliente_html_a9aba1d2afb29614e6cbcba850b619c24"><div class="ttname"><a href="classCliente.html#a9aba1d2afb29614e6cbcba850b619c24">Cliente::clienteDevolve</a></div><div class="ttdeci">void clienteDevolve(DVD &amp;, FitaVideo &amp;)</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:24</div></div>
-<div class="ttc" id="aclassCliente_html_a9bd6e10a6de0d212ced594f6f4de0cc5"><div class="ttname"><a href="classCliente.html#a9bd6e10a6de0d212ced594f6f4de0cc5">Cliente::imprimeCliente</a></div><div class="ttdeci">void imprimeCliente() const</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:54</div></div>
-<div class="ttc" id="aclassCliente_html_aae68a2610ea9adcac6464ed39c305073"><div class="ttname"><a href="classCliente.html#aae68a2610ea9adcac6464ed39c305073">Cliente::Cliente</a></div><div class="ttdeci">Cliente(std::string nome, int cpf)</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:3</div></div>
-<div class="ttc" id="aclassCliente_html_abfd45b8b07a8549fe4761d00c76a43c3"><div class="ttname"><a href="classCliente.html#abfd45b8b07a8549fe4761d00c76a43c3">Cliente::getNome</a></div><div class="ttdeci">std::string getNome() const</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:52</div></div>
-<div class="ttc" id="aclassDVD_html"><div class="ttname"><a href="classDVD.html">DVD</a></div><div class="ttdef"><b>Definition:</b> DVD.hpp:9</div></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::vector&lt;int&gt; _FitaVideoAlugadas;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::vector&lt;int&gt; _DVDsAlugados;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="classCliente.html#ab6a372f412692c12c4be4427b00a3f6e">Cliente</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classCliente.html#ab6a372f412692c12c4be4427b00a3f6e">Cliente</a>(std::string nome, <span class="keywordtype">int</span> cpf);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classCliente.html#a94fab666338676acc92ea411752f5c65">clienteAluga</a>(<a class="code" href="classDVD.html">DVD</a>&amp;, <a class="code" href="classFitaVideo.html">FitaVideo</a>&amp;);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classCliente.html#a57885149f739efac4f2390e522c2774c">clienteAlugaCodigo</a>(<span class="keywordtype">int</span>, <a class="code" href="classDVD.html">DVD</a>&amp;, <a class="code" href="classFitaVideo.html">FitaVideo</a>&amp;);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classCliente.html#a9aba1d2afb29614e6cbcba850b619c24">clienteDevolve</a>(<a class="code" href="classDVD.html">DVD</a>&amp;, <a class="code" href="classFitaVideo.html">FitaVideo</a>&amp;);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCliente.html#a3f78e13722ebdb1372067d3cc22fa4f9">getCPF</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        std::string <a class="code" href="classCliente.html#abfd45b8b07a8549fe4761d00c76a43c3">getNome</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classCliente.html#a9bd6e10a6de0d212ced594f6f4de0cc5">imprimeCliente</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="classCliente.html#a29d1d53394350c66363109e33c990b58">~Cliente</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassCliente_html"><div class="ttname"><a href="classCliente.html">Cliente</a></div><div class="ttdef"><b>Definition:</b> Cliente.hpp:15</div></div>
+<div class="ttc" id="aclassCliente_html_a29d1d53394350c66363109e33c990b58"><div class="ttname"><a href="classCliente.html#a29d1d53394350c66363109e33c990b58">Cliente::~Cliente</a></div><div class="ttdeci">~Cliente()</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:70</div></div>
+<div class="ttc" id="aclassCliente_html_a3f78e13722ebdb1372067d3cc22fa4f9"><div class="ttname"><a href="classCliente.html#a3f78e13722ebdb1372067d3cc22fa4f9">Cliente::getCPF</a></div><div class="ttdeci">int getCPF() const</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:62</div></div>
+<div class="ttc" id="aclassCliente_html_a57885149f739efac4f2390e522c2774c"><div class="ttname"><a href="classCliente.html#a57885149f739efac4f2390e522c2774c">Cliente::clienteAlugaCodigo</a></div><div class="ttdeci">void clienteAlugaCodigo(int, DVD &amp;, FitaVideo &amp;)</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:26</div></div>
+<div class="ttc" id="aclassCliente_html_a94fab666338676acc92ea411752f5c65"><div class="ttname"><a href="classCliente.html#a94fab666338676acc92ea411752f5c65">Cliente::clienteAluga</a></div><div class="ttdeci">void clienteAluga(DVD &amp;, FitaVideo &amp;)</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:10</div></div>
+<div class="ttc" id="aclassCliente_html_a9aba1d2afb29614e6cbcba850b619c24"><div class="ttname"><a href="classCliente.html#a9aba1d2afb29614e6cbcba850b619c24">Cliente::clienteDevolve</a></div><div class="ttdeci">void clienteDevolve(DVD &amp;, FitaVideo &amp;)</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:36</div></div>
+<div class="ttc" id="aclassCliente_html_a9bd6e10a6de0d212ced594f6f4de0cc5"><div class="ttname"><a href="classCliente.html#a9bd6e10a6de0d212ced594f6f4de0cc5">Cliente::imprimeCliente</a></div><div class="ttdeci">void imprimeCliente() const</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:66</div></div>
+<div class="ttc" id="aclassCliente_html_ab6a372f412692c12c4be4427b00a3f6e"><div class="ttname"><a href="classCliente.html#ab6a372f412692c12c4be4427b00a3f6e">Cliente::Cliente</a></div><div class="ttdeci">Cliente()</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:3</div></div>
+<div class="ttc" id="aclassCliente_html_abfd45b8b07a8549fe4761d00c76a43c3"><div class="ttname"><a href="classCliente.html#abfd45b8b07a8549fe4761d00c76a43c3">Cliente::getNome</a></div><div class="ttdeci">std::string getNome() const</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:64</div></div>
+<div class="ttc" id="aclassDVD_html"><div class="ttname"><a href="classDVD.html">DVD</a></div><div class="ttdef"><b>Definition:</b> DVD.hpp:12</div></div>
 <div class="ttc" id="aclassFitaVideo_html"><div class="ttname"><a href="classFitaVideo.html">FitaVideo</a></div><div class="ttdef"><b>Definition:</b> FitaVideo.hpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -10,6 +10,8 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <stdexcept>
+#include <bitset>    
 
 /**********************************************************************
  * Classe SistemaLocadora que irá direcionar para todas as operações.

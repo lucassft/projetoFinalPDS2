@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <stdexcept>
+#include <bitset>    
 
 /*****************************************************************
 	*Superclasse Filme que irá fornecer a base para as classes DVD e

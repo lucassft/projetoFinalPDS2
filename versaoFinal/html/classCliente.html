@@ -73,10 +73,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ab6a372f412692c12c4be4427b00a3f6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCliente.html#ab6a372f412692c12c4be4427b00a3f6e">Cliente</a> ()</td></tr>
+<tr class="separator:ab6a372f412692c12c4be4427b00a3f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae68a2610ea9adcac6464ed39c305073"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCliente.html#aae68a2610ea9adcac6464ed39c305073">Cliente</a> (std::string nome, int cpf)</td></tr>
 <tr class="separator:aae68a2610ea9adcac6464ed39c305073"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94fab666338676acc92ea411752f5c65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCliente.html#a94fab666338676acc92ea411752f5c65">clienteAluga</a> (<a class="el" href="classDVD.html">DVD</a> &amp;, <a class="el" href="classFitaVideo.html">FitaVideo</a> &amp;)</td></tr>
 <tr class="separator:a94fab666338676acc92ea411752f5c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57885149f739efac4f2390e522c2774c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCliente.html#a57885149f739efac4f2390e522c2774c">clienteAlugaCodigo</a> (int, <a class="el" href="classDVD.html">DVD</a> &amp;, <a class="el" href="classFitaVideo.html">FitaVideo</a> &amp;)</td></tr>
+<tr class="separator:a57885149f739efac4f2390e522c2774c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9aba1d2afb29614e6cbcba850b619c24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCliente.html#a9aba1d2afb29614e6cbcba850b619c24">clienteDevolve</a> (<a class="el" href="classDVD.html">DVD</a> &amp;, <a class="el" href="classFitaVideo.html">FitaVideo</a> &amp;)</td></tr>
 <tr class="separator:a9aba1d2afb29614e6cbcba850b619c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f78e13722ebdb1372067d3cc22fa4f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCliente.html#a3f78e13722ebdb1372067d3cc22fa4f9">getCPF</a> () const</td></tr>
@@ -89,8 +93,26 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a29d1d53394350c66363109e33c990b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab6a372f412692c12c4be4427b00a3f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6a372f412692c12c4be4427b00a3f6e">&#9670;&nbsp;</a></span>Cliente() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Cliente::Cliente </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construtor default da classe cliente. </p>
+
+</div>
+</div>
 <a id="aae68a2610ea9adcac6464ed39c305073"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae68a2610ea9adcac6464ed39c305073">&#9670;&nbsp;</a></span>Cliente()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aae68a2610ea9adcac6464ed39c305073">&#9670;&nbsp;</a></span>Cliente() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -114,6 +136,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Construtor que receba como parâmetro o nome e CPF de um cliente. </p>
 
 </div>
 </div>
@@ -131,6 +154,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Destrutor default da classe <a class="el" href="classCliente.html">Cliente</a>. </p>
 
 </div>
 </div>
@@ -160,6 +184,42 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que faz todas as operações acerca do aluguel de um filme, como diminuir a quantidade disponível e o armazenar no vetor de <a class="el" href="classDVD.html">DVD</a>'s alugados, se for um <a class="el" href="classDVD.html">DVD</a>, ou no vetor de fitas de vídeo alugadas, se for uma fita de vídeo. </p>
+
+</div>
+</div>
+<a id="a57885149f739efac4f2390e522c2774c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57885149f739efac4f2390e522c2774c">&#9670;&nbsp;</a></span>clienteAlugaCodigo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cliente::clienteAlugaCodigo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>codigoFilme</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classDVD.html">DVD</a> &amp;&#160;</td>
+          <td class="paramname"><em>dvdSistema</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classFitaVideo.html">FitaVideo</a> &amp;&#160;</td>
+          <td class="paramname"><em>fitaVideoSistema</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Função que verifica se um código de identificação do filme está armazenado nos vetores que armazenam os <a class="el" href="classDVD.html">DVD</a>'s/Fitas de vídeo cadastradas. </p>
 
 </div>
 </div>
@@ -188,6 +248,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que aumenta a quantidade disponível de <a class="el" href="classDVD.html">DVD</a>'s ou fitas de vídeo que foram alugadas, de volta ao vetor de mídia cadastrados. </p>
 
 </div>
 </div>
@@ -205,6 +266,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que retorna o CPF de um cliente cadastrado. </p>
 
 </div>
 </div>
@@ -222,6 +284,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que retorna o nome de um cliente cadastrado. </p>
 
 </div>
 </div>
@@ -239,6 +302,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função que imprime as informações de um cliente cadastrado. </p>
 
 </div>
 </div>

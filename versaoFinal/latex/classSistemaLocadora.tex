@@ -13,7 +13,7 @@ void \mbox{\hyperlink{classSistemaLocadora_a030ccd9a5d279a4a03b1cc076db640cf}{in
 \item 
 void \mbox{\hyperlink{classSistemaLocadora_a6b0bc1cdcd82452b570be08c9292f57b}{imprime\+Interface\+Sistema\+Locadora}} ()
 \item 
-void \mbox{\hyperlink{classSistemaLocadora_ace37c0d7875e07b5218104b0bc4165a3}{ler\+Arquivo\+Cadastro}} ()
+void \mbox{\hyperlink{classSistemaLocadora_a73b031434392e639f2e03877198c10ec}{ler\+Arquivo\+Cadastro}} (\mbox{\hyperlink{classDVD}{DVD}} \&, \mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&)
 \item 
 void \mbox{\hyperlink{classSistemaLocadora_af6064ab25d2f123947eecd900c770b98}{cadastrar\+Filme}} (\mbox{\hyperlink{classDVD}{DVD}} \&, \mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&)
 \item 
@@ -21,13 +21,13 @@ void \mbox{\hyperlink{classSistemaLocadora_a9c56fe0cf37804b29d72cb17d9b769b5}{re
 \item 
 void \mbox{\hyperlink{classSistemaLocadora_a017f68a89788ce2f7ab1cb51c92353d5}{listar\+Filmes\+Ordenados\+Codigo\+Titulo}} (\mbox{\hyperlink{classDVD}{DVD}} \&, \mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&)
 \item 
+void \mbox{\hyperlink{classSistemaLocadora_a0d6ad7f4b5228f7c63f12e082c79954d}{lista\+Cliente\+Codigo\+Nome}} (\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&)
+\item 
 void \mbox{\hyperlink{classSistemaLocadora_a67baee0825723b93c1cd0ee75ca4025c}{cadastrar\+Cliente}} (\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&)
 \item 
 void \mbox{\hyperlink{classSistemaLocadora_ae87409e2f50cbbc65474e7b8f2c90997}{remover\+Cliente}} (\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&)
 \item 
-void \mbox{\hyperlink{classSistemaLocadora_a0d6ad7f4b5228f7c63f12e082c79954d}{lista\+Cliente\+Codigo\+Nome}} (\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&)
-\item 
-void \mbox{\hyperlink{classSistemaLocadora_a541ad211bd20e4c068e577a3db7b78c7}{aluguel\+Filme}} (\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&)
+void \mbox{\hyperlink{classSistemaLocadora_ac517e2f16d616b503b4c05649cfb5c79}{aluguel\+Filme}} (\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&, \mbox{\hyperlink{classDVD}{DVD}} \&, \mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&)
 \item 
 void \mbox{\hyperlink{classSistemaLocadora_a67c4e4afc721a9bf04726f0c73c931ec}{devolucao\+Filme}} (\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&, \mbox{\hyperlink{classDVD}{DVD}} \&, \mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&)
 \item 
@@ -42,82 +42,82 @@ void \mbox{\hyperlink{classSistemaLocadora_a67c4e4afc721a9bf04726f0c73c931ec}{de
 \doxysubsubsection{\texorpdfstring{SistemaLocadora()}{SistemaLocadora()}}
 {\footnotesize\ttfamily Sistema\+Locadora\+::\+Sistema\+Locadora (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_a7d55beb252053ba9b9d74dfe2c776526}\label{classSistemaLocadora_a7d55beb252053ba9b9d74dfe2c776526}} 
+Construtor default da classe \mbox{\hyperlink{classSistemaLocadora}{Sistema\+Locadora}}. \mbox{\Hypertarget{classSistemaLocadora_a7d55beb252053ba9b9d74dfe2c776526}\label{classSistemaLocadora_a7d55beb252053ba9b9d74dfe2c776526}} 
 \index{SistemaLocadora@{SistemaLocadora}!````~SistemaLocadora@{$\sim$SistemaLocadora}}
 \index{````~SistemaLocadora@{$\sim$SistemaLocadora}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{$\sim$SistemaLocadora()}{~SistemaLocadora()}}
 {\footnotesize\ttfamily Sistema\+Locadora\+::$\sim$\+Sistema\+Locadora (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
+Destrutor default da classe \mbox{\hyperlink{classSistemaLocadora}{Sistema\+Locadora}}. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classSistemaLocadora_a541ad211bd20e4c068e577a3db7b78c7}\label{classSistemaLocadora_a541ad211bd20e4c068e577a3db7b78c7}} 
+\mbox{\Hypertarget{classSistemaLocadora_ac517e2f16d616b503b4c05649cfb5c79}\label{classSistemaLocadora_ac517e2f16d616b503b4c05649cfb5c79}} 
 \index{SistemaLocadora@{SistemaLocadora}!aluguelFilme@{aluguelFilme}}
 \index{aluguelFilme@{aluguelFilme}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{aluguelFilme()}{aluguelFilme()}}
-{\footnotesize\ttfamily void Sistema\+Locadora\+::aluguel\+Filme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Sistema\+Locadora\+::aluguel\+Filme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&}]{sistema\+Controle\+Locacao,  }\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{\mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&}]{sistema\+Fita\+Video }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_a67baee0825723b93c1cd0ee75ca4025c}\label{classSistemaLocadora_a67baee0825723b93c1cd0ee75ca4025c}} 
+Função que direciona às operações que realizam o aluguel de um filme, de acordo com a disponibilidade dos \mbox{\hyperlink{classDVD}{DVD}}\textquotesingle{}s ou fitas de aluguel e se ele está cadastrado no sistema. \mbox{\Hypertarget{classSistemaLocadora_a67baee0825723b93c1cd0ee75ca4025c}\label{classSistemaLocadora_a67baee0825723b93c1cd0ee75ca4025c}} 
 \index{SistemaLocadora@{SistemaLocadora}!cadastrarCliente@{cadastrarCliente}}
 \index{cadastrarCliente@{cadastrarCliente}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{cadastrarCliente()}{cadastrarCliente()}}
 {\footnotesize\ttfamily void Sistema\+Locadora\+::cadastrar\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&}]{sistema\+Controle\+Locacao }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_af6064ab25d2f123947eecd900c770b98}\label{classSistemaLocadora_af6064ab25d2f123947eecd900c770b98}} 
+Função que direciona ao cadastro de um cliente no vetor responsável pelo armazenamento dos clientes cadastrados no sistema. \mbox{\Hypertarget{classSistemaLocadora_af6064ab25d2f123947eecd900c770b98}\label{classSistemaLocadora_af6064ab25d2f123947eecd900c770b98}} 
 \index{SistemaLocadora@{SistemaLocadora}!cadastrarFilme@{cadastrarFilme}}
 \index{cadastrarFilme@{cadastrarFilme}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{cadastrarFilme()}{cadastrarFilme()}}
 {\footnotesize\ttfamily void Sistema\+Locadora\+::cadastrar\+Filme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{\mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&}]{sistema\+Fita\+Video }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_a67c4e4afc721a9bf04726f0c73c931ec}\label{classSistemaLocadora_a67c4e4afc721a9bf04726f0c73c931ec}} 
+Função que cadastra um filme nos vetores de \mbox{\hyperlink{classDVD}{DVD}} ou de fita de vídeo, de acordo com a classificação. \mbox{\Hypertarget{classSistemaLocadora_a67c4e4afc721a9bf04726f0c73c931ec}\label{classSistemaLocadora_a67c4e4afc721a9bf04726f0c73c931ec}} 
 \index{SistemaLocadora@{SistemaLocadora}!devolucaoFilme@{devolucaoFilme}}
 \index{devolucaoFilme@{devolucaoFilme}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{devolucaoFilme()}{devolucaoFilme()}}
-{\footnotesize\ttfamily void Sistema\+Locadora\+::devolucao\+Filme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&}]{,  }\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{,  }\item[{\mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Sistema\+Locadora\+::devolucao\+Filme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&}]{sistema\+Controle\+Locacao,  }\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{\mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&}]{sistema\+Fita\+Video }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_a6b0bc1cdcd82452b570be08c9292f57b}\label{classSistemaLocadora_a6b0bc1cdcd82452b570be08c9292f57b}} 
+Função que direciona às operações que realizam a devoluçãode um filme, de acordo com a disponibilidade dos \mbox{\hyperlink{classDVD}{DVD}}\textquotesingle{}s ou fitas de aluguel e se ele está cadastrado no sistema. \mbox{\Hypertarget{classSistemaLocadora_a6b0bc1cdcd82452b570be08c9292f57b}\label{classSistemaLocadora_a6b0bc1cdcd82452b570be08c9292f57b}} 
 \index{SistemaLocadora@{SistemaLocadora}!imprimeInterfaceSistemaLocadora@{imprimeInterfaceSistemaLocadora}}
 \index{imprimeInterfaceSistemaLocadora@{imprimeInterfaceSistemaLocadora}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{imprimeInterfaceSistemaLocadora()}{imprimeInterfaceSistemaLocadora()}}
 {\footnotesize\ttfamily void Sistema\+Locadora\+::imprime\+Interface\+Sistema\+Locadora (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_a030ccd9a5d279a4a03b1cc076db640cf}\label{classSistemaLocadora_a030ccd9a5d279a4a03b1cc076db640cf}} 
+Imprime na tela as operações disponíveis na tela. \mbox{\Hypertarget{classSistemaLocadora_a030ccd9a5d279a4a03b1cc076db640cf}\label{classSistemaLocadora_a030ccd9a5d279a4a03b1cc076db640cf}} 
 \index{SistemaLocadora@{SistemaLocadora}!interfaceSistemaLocadora@{interfaceSistemaLocadora}}
 \index{interfaceSistemaLocadora@{interfaceSistemaLocadora}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{interfaceSistemaLocadora()}{interfaceSistemaLocadora()}}
 {\footnotesize\ttfamily void Sistema\+Locadora\+::interface\+Sistema\+Locadora (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{\mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&}]{sistema\+Fita\+Video,  }\item[{\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&}]{sistema\+Controle\+Locacao }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_ace37c0d7875e07b5218104b0bc4165a3}\label{classSistemaLocadora_ace37c0d7875e07b5218104b0bc4165a3}} 
+Função que imprime na tela as opções disponíveis ao operador do sistema e recebe como parâmetro as classes em que iremos guardar os clientes, \mbox{\hyperlink{classDVD}{DVD}}\textquotesingle{}s e fitas de vídeo cadastrados. \mbox{\Hypertarget{classSistemaLocadora_a73b031434392e639f2e03877198c10ec}\label{classSistemaLocadora_a73b031434392e639f2e03877198c10ec}} 
 \index{SistemaLocadora@{SistemaLocadora}!lerArquivoCadastro@{lerArquivoCadastro}}
 \index{lerArquivoCadastro@{lerArquivoCadastro}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{lerArquivoCadastro()}{lerArquivoCadastro()}}
-{\footnotesize\ttfamily void Sistema\+Locadora\+::ler\+Arquivo\+Cadastro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Sistema\+Locadora\+::ler\+Arquivo\+Cadastro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{\mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&}]{sistema\+Fita\+Video }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_a0d6ad7f4b5228f7c63f12e082c79954d}\label{classSistemaLocadora_a0d6ad7f4b5228f7c63f12e082c79954d}} 
+Lê um arquivo de cadastro e cadastra um \mbox{\hyperlink{classDVD}{DVD}} ou fita de vídeo a partir de um arquivo de texto. \mbox{\Hypertarget{classSistemaLocadora_a0d6ad7f4b5228f7c63f12e082c79954d}\label{classSistemaLocadora_a0d6ad7f4b5228f7c63f12e082c79954d}} 
 \index{SistemaLocadora@{SistemaLocadora}!listaClienteCodigoNome@{listaClienteCodigoNome}}
 \index{listaClienteCodigoNome@{listaClienteCodigoNome}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{listaClienteCodigoNome()}{listaClienteCodigoNome()}}
 {\footnotesize\ttfamily void Sistema\+Locadora\+::lista\+Cliente\+Codigo\+Nome (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&}]{sistema\+Controle\+Locacao }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_a017f68a89788ce2f7ab1cb51c92353d5}\label{classSistemaLocadora_a017f68a89788ce2f7ab1cb51c92353d5}} 
+Função que lista os clientes armazenados no vetor responsável pelo armazenamento dos clientes cadastrados no sistema. \mbox{\Hypertarget{classSistemaLocadora_a017f68a89788ce2f7ab1cb51c92353d5}\label{classSistemaLocadora_a017f68a89788ce2f7ab1cb51c92353d5}} 
 \index{SistemaLocadora@{SistemaLocadora}!listarFilmesOrdenadosCodigoTitulo@{listarFilmesOrdenadosCodigoTitulo}}
 \index{listarFilmesOrdenadosCodigoTitulo@{listarFilmesOrdenadosCodigoTitulo}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{listarFilmesOrdenadosCodigoTitulo()}{listarFilmesOrdenadosCodigoTitulo()}}
 {\footnotesize\ttfamily void Sistema\+Locadora\+::listar\+Filmes\+Ordenados\+Codigo\+Titulo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{\mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&}]{sistema\+Fita\+Video }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_ae87409e2f50cbbc65474e7b8f2c90997}\label{classSistemaLocadora_ae87409e2f50cbbc65474e7b8f2c90997}} 
+Função que lista os filmes armazenados nos vetores de \mbox{\hyperlink{classDVD}{DVD}} ou fita de vídeo, de acordo com o código de identificação ou título. \mbox{\Hypertarget{classSistemaLocadora_ae87409e2f50cbbc65474e7b8f2c90997}\label{classSistemaLocadora_ae87409e2f50cbbc65474e7b8f2c90997}} 
 \index{SistemaLocadora@{SistemaLocadora}!removerCliente@{removerCliente}}
 \index{removerCliente@{removerCliente}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{removerCliente()}{removerCliente()}}
 {\footnotesize\ttfamily void Sistema\+Locadora\+::remover\+Cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classControleLocacao}{Controle\+Locacao}} \&}]{sistema\+Controle\+Locacao }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSistemaLocadora_a9c56fe0cf37804b29d72cb17d9b769b5}\label{classSistemaLocadora_a9c56fe0cf37804b29d72cb17d9b769b5}} 
+Função que direciona à remoção de um cliente no vetor responsável pelo armazenamento dos clientes cadastrados no sistema. \mbox{\Hypertarget{classSistemaLocadora_a9c56fe0cf37804b29d72cb17d9b769b5}\label{classSistemaLocadora_a9c56fe0cf37804b29d72cb17d9b769b5}} 
 \index{SistemaLocadora@{SistemaLocadora}!removerFilme@{removerFilme}}
 \index{removerFilme@{removerFilme}!SistemaLocadora@{SistemaLocadora}}
 \doxysubsubsection{\texorpdfstring{removerFilme()}{removerFilme()}}
 {\footnotesize\ttfamily void Sistema\+Locadora\+::remover\+Filme (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDVD}{DVD}} \&}]{sistema\+DVD,  }\item[{\mbox{\hyperlink{classFitaVideo}{Fita\+Video}} \&}]{sistema\+Fita\+Video }\end{DoxyParamCaption})}
 
-
+Função que remove um filme nos vetores de \mbox{\hyperlink{classDVD}{DVD}} ou de fita de vídeo, de acordo com a classificação. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

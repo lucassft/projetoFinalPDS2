@@ -2,11 +2,11 @@
 
 FitaVideo::FitaVideo() {}
 
-void FitaVideo::clienteAlugaFitaVideo(int codigoFita) {
-	if (verificaSaldoFitaVideo(codigoFita)) {
+void FitaVideo::clienteAlugaFitaVideo(FitaVideo& sistemaFitaVideo, int codigoFita) {
+	if (verificaSaldoFitaVideo(sistemaFitaVideo, codigoFita)) {
 		for (unsigned int i = 0; i < _FitaVideoCadastradas.size(); i++) {
-			if (_FitaVideoCadastradas[i].getCodigoNumeroFilme() == codigoFita) {
-				_FitaVideoCadastradas[i].diminuiUnidadesDisponiveis();
+			if (sistemaFitaVideo._FitaVideoCadastradas[i].getCodigoNumeroFilme() == codigoFita) {
+				sistemaFitaVideo._FitaVideoCadastradas[i].diminuiUnidadesDisponiveis();
 			}
 		} 
 	} else std::cout << "ERRO: Filme <" << codigoFita << "> inexistente" << std::endl;
@@ -17,8 +17,13 @@ int FitaVideo::retornaDevolucaoFitaVideo(int codigoFitaVideo, int diasAlugado) {
 	else return 5;
 }
 
-bool FitaVideo::verificaSaldoFitaVideo(int codigoFitaVideo) {
-	if (verificaCadastroFitaVideo(codigoFitaVideo) && (getNumeroUnidadesDisponiveis() > 0)) return true;
+bool FitaVideo::verificaSaldoFitaVideo(FitaVideo& sistemaFitaVideo, int codigoFitaVideo) {
+	if (sistemaFitaVideo.verificaCadastroFitaVideo(sistemaFitaVideo, codigoFitaVideo)) {
+		for (unsigned int i = 0; i < sistemaFitaVideo._FitaVideoCadastradas.size(); i++) {
+			if (sistemaFitaVideo._FitaVideoCadastradas[i].getCodigoNumeroFilme() == codigoFitaVideo && 
+					_FitaVideoCadastradas[i].getNumeroUnidadesDisponiveis() > 0) return true;
+		} 
+	} else return false;
 }
 
 int FitaVideo::qtdFitasVideoCadastrados() {
@@ -26,12 +31,11 @@ int FitaVideo::qtdFitasVideoCadastrados() {
 	return qtdFitasVideoCadastrados;
 }
 
-bool FitaVideo::verificaCadastroFitaVideo(int codigoFitaVideo) {
-	int tamVetor = qtdFitasVideoCadastrados();
-	for (int i = 0; i < tamVetor; i++) {
+bool FitaVideo::verificaCadastroFitaVideo(FitaVideo& sistemaFitaVideo, int codigoFitaVideo) {
+	for (unsigned int i = 0; i < sistemaFitaVideo._FitaVideoCadastradas.size(); i++) {
 		if (_FitaVideoCadastradas[i].getCodigoNumeroFilme() == codigoFitaVideo) { return true;
 		} 
-	} return false; // throw cpf não cadastrado
+	} std::invalid_argument("ERRO: CPF não cadastrado.");
 }
 
 FitaVideo::FitaVideo(int codigoNumeroFilme, 
@@ -44,15 +48,15 @@ FitaVideo::FitaVideo(int codigoNumeroFilme,
 }
 
 // CF <Tipo: F|D> <quantidade> <código> <título> <categoria no caso de DVD>
-void FitaVideo::cadastraFitaVideoDoZero() {
+void FitaVideo::cadastraFitaVideoDoZero(FitaVideo& sistemaFitaVideo) {
 	std::cout << "CF <Tipo: F|D> <quantidade> <código> <título> <categoria no caso de DVD>" << std::endl;
 	int quantidadeDisponivelFitaVideo{0}, codigoFitaVideo{0}; std::string tituloFitaVideo{'0'};
 	std::cin >> quantidadeDisponivelFitaVideo >> codigoFitaVideo; getline(std::cin, tituloFitaVideo);
-	if (!verificaCadastroFitaVideo(codigoFitaVideo)) {
+	if (!verificaCadastroFitaVideo(sistemaFitaVideo, codigoFitaVideo)) {
 		FitaVideo fitaVideo(codigoFitaVideo, tituloFitaVideo, quantidadeDisponivelFitaVideo);
-		_FitaVideoCadastradas.push_back(fitaVideo);
+		sistemaFitaVideo._FitaVideoCadastradas.push_back(fitaVideo);
 		std::cout << "Filme <" << codigoFitaVideo << "> cadastrado com sucesso." << std::endl;
-	} else std::cout << "ERRO: código repetido." << std::endl;
+	} else std::invalid_argument("ERRO: código repetido.");
 }
 
 void FitaVideo::cadastraFitaVideoParametros(FitaVideo& sistemaFitaVideo, int codigoFitaVideo, std::string tituloFitaVideo, int quantidadeDisponivelFitaVideo) {
@@ -60,23 +64,27 @@ void FitaVideo::cadastraFitaVideoParametros(FitaVideo& sistemaFitaVideo, int cod
 	sistemaFitaVideo._FitaVideoCadastradas.push_back(fitavideo);
 }
 
-void FitaVideo::removeFitaVideo(int codigoFitaVideoRemovido) {
+void FitaVideo::removeFitaVideo(FitaVideo& sistemaFitaVideo, int codigoFitaVideoRemovido) {
 	int tamVetor = _FitaVideoCadastradas.size();
-	if (verificaCadastroFitaVideo(codigoFitaVideoRemovido)) {
-		for (int i = 0; i < tamVetor; i++) {
-			if (_FitaVideoCadastradas[i].getCodigoNumeroFilme() == codigoFitaVideoRemovido) {
-				_FitaVideoCadastradas.erase(_FitaVideoCadastradas.begin() + i);
-			}
-		} std::cout << "Filme <" << codigoFitaVideoRemovido << "> removido com sucesso" << std::endl;
-	} else std::cout << "ERRO: dados incorretos." << std::endl;
+	if (tamVetor == 0) {
+		throw std::invalid_argument("Não há fita a ser removida");
+	} else {
+		if (verificaCadastroFitaVideo(sistemaFitaVideo, codigoFitaVideoRemovido)) {
+			for (int i = 0; i < tamVetor; i++) {
+				if (_FitaVideoCadastradas[i].getCodigoNumeroFilme() == codigoFitaVideoRemovido) {
+					_FitaVideoCadastradas.erase(_FitaVideoCadastradas.begin() + i);
+				}
+			} std::cout << "Filme <" << codigoFitaVideoRemovido << "> removido com sucesso" << std::endl;
+		} else std::invalid_argument("ERRO: dados incorretos");
+	}
 }
 
 FitaVideo FitaVideo::getFitaVideoCadastrada(int i) {
 	return _FitaVideoCadastradas[i];
 }
 
-int FitaVideo::getFitaVideoCadastradaCodigoFilme(int i) {
-	return _FitaVideoCadastradas[i].getCodigoNumeroFilme();
+int FitaVideo::getFitaVideoCadastradaCodigoFilme(FitaVideo& sistemaFitaVideo, int i) {
+	return sistemaFitaVideo._FitaVideoCadastradas[i].getCodigoNumeroFilme();
 }
 
 void FitaVideo::listaFitaVideoCodigo() {

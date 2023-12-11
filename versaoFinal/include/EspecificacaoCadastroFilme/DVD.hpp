@@ -3,6 +3,8 @@
 
 #include "Filme.hpp"
 
+#include <stdexcept>
+#include <bitset>    
 #include <iostream>
 #include <vector>
 
@@ -109,7 +111,7 @@ class DVD : public Filme {
 	/**
 		* Função que faz as mudanças de acordo com a devolução de um DVD.
 		**/
-		int retornaDevolucaoDVD(int, int);
+		int retornaDevolucaoDVD(DVD&, int, int);
 		~DVD();
 };
 

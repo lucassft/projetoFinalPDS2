@@ -76,6 +76,12 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*****************************************************************</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">    *Superclasse Filme que irá fornecer a base para as classes DVD e</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    *e FitaVideo.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">    *Teremos um código de identificação do filme, um título e algum </span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">    *número de unidades disponíveis para locação.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">    ****************************************************************/</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classFilme.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFilme.html">Filme</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span>:</div>
@@ -87,7 +93,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">int</span> _numeroUnidadesDisponiveis;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classFilme.html#a9b600c9c211038052bb6426718611cff">   37</a></span>&#160;        <a class="code" href="classFilme.html#a9b600c9c211038052bb6426718611cff">Filme</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classFilme.html#a9b600c9c211038052bb6426718611cff">Filme</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classFilme.html#a9b600c9c211038052bb6426718611cff">Filme</a>(<span class="keywordtype">int</span>, std::string, <span class="keywordtype">int</span>); </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
@@ -99,22 +105,23 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classFilme.html#a0ee5696a0d2b810fea9e61b1c1cda051">getCodigoNumeroFilme</a> () <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classFilme.html#a2f772a602c35d6878437cce4a8cff141">getNumeroUnidadesDisponiveis</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        std::string <a class="code" href="classFilme.html#a3de96a57c73ec0f8d6bcb0efbe9b9ab0">getTituloFilme</a> () <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classFilme.html#a3d4bf28af3ba618785937af3744f0818">   73</a></span>&#160;        <a class="code" href="classFilme.html#a3d4bf28af3ba618785937af3744f0818">~Filme</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classFilme.html#a2f772a602c35d6878437cce4a8cff141">getNumeroUnidadesDisponiveis</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        std::string <a class="code" href="classFilme.html#a3de96a57c73ec0f8d6bcb0efbe9b9ab0">getTituloFilme</a> () <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classFilme.html#a3d4bf28af3ba618785937af3744f0818">~Filme</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassFilme_html"><div class="ttname"><a href="classFilme.html">Filme</a></div><div class="ttdef"><b>Definition:</b> Filme.hpp:14</div></div>
-<div class="ttc" id="aclassFilme_html_a0ee5696a0d2b810fea9e61b1c1cda051"><div class="ttname"><a href="classFilme.html#a0ee5696a0d2b810fea9e61b1c1cda051">Filme::getCodigoNumeroFilme</a></div><div class="ttdeci">int getCodigoNumeroFilme() const</div><div class="ttdef"><b>Definition:</b> Filme.cpp:15</div></div>
-<div class="ttc" id="aclassFilme_html_a2f772a602c35d6878437cce4a8cff141"><div class="ttname"><a href="classFilme.html#a2f772a602c35d6878437cce4a8cff141">Filme::getNumeroUnidadesDisponiveis</a></div><div class="ttdeci">int getNumeroUnidadesDisponiveis()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:19</div></div>
-<div class="ttc" id="aclassFilme_html_a3d4bf28af3ba618785937af3744f0818"><div class="ttname"><a href="classFilme.html#a3d4bf28af3ba618785937af3744f0818">Filme::~Filme</a></div><div class="ttdeci">~Filme()</div></div>
-<div class="ttc" id="aclassFilme_html_a3de96a57c73ec0f8d6bcb0efbe9b9ab0"><div class="ttname"><a href="classFilme.html#a3de96a57c73ec0f8d6bcb0efbe9b9ab0">Filme::getTituloFilme</a></div><div class="ttdeci">std::string getTituloFilme() const</div><div class="ttdef"><b>Definition:</b> Filme.cpp:17</div></div>
-<div class="ttc" id="aclassFilme_html_a4f6dd476349b5ac5b8a899d578e6d7ff"><div class="ttname"><a href="classFilme.html#a4f6dd476349b5ac5b8a899d578e6d7ff">Filme::setDVD</a></div><div class="ttdeci">void setDVD()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:9</div></div>
-<div class="ttc" id="aclassFilme_html_a6169e56da444f25679cb14df7f065725"><div class="ttname"><a href="classFilme.html#a6169e56da444f25679cb14df7f065725">Filme::setFitaVideo</a></div><div class="ttdeci">void setFitaVideo()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:13</div></div>
-<div class="ttc" id="aclassFilme_html_a9b600c9c211038052bb6426718611cff"><div class="ttname"><a href="classFilme.html#a9b600c9c211038052bb6426718611cff">Filme::Filme</a></div><div class="ttdeci">Filme()</div></div>
-<div class="ttc" id="aclassFilme_html_acf4af0c9b7964eefceb0e288e6d5915a"><div class="ttname"><a href="classFilme.html#acf4af0c9b7964eefceb0e288e6d5915a">Filme::diminuiUnidadesDisponiveis</a></div><div class="ttdeci">void diminuiUnidadesDisponiveis()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:11</div></div>
+<div class="ttc" id="aclassFilme_html_a0ee5696a0d2b810fea9e61b1c1cda051"><div class="ttname"><a href="classFilme.html#a0ee5696a0d2b810fea9e61b1c1cda051">Filme::getCodigoNumeroFilme</a></div><div class="ttdeci">int getCodigoNumeroFilme() const</div><div class="ttdef"><b>Definition:</b> Filme.cpp:17</div></div>
+<div class="ttc" id="aclassFilme_html_a2f772a602c35d6878437cce4a8cff141"><div class="ttname"><a href="classFilme.html#a2f772a602c35d6878437cce4a8cff141">Filme::getNumeroUnidadesDisponiveis</a></div><div class="ttdeci">int getNumeroUnidadesDisponiveis()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:21</div></div>
+<div class="ttc" id="aclassFilme_html_a3d4bf28af3ba618785937af3744f0818"><div class="ttname"><a href="classFilme.html#a3d4bf28af3ba618785937af3744f0818">Filme::~Filme</a></div><div class="ttdeci">~Filme()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:23</div></div>
+<div class="ttc" id="aclassFilme_html_a3de96a57c73ec0f8d6bcb0efbe9b9ab0"><div class="ttname"><a href="classFilme.html#a3de96a57c73ec0f8d6bcb0efbe9b9ab0">Filme::getTituloFilme</a></div><div class="ttdeci">std::string getTituloFilme() const</div><div class="ttdef"><b>Definition:</b> Filme.cpp:19</div></div>
+<div class="ttc" id="aclassFilme_html_a4f6dd476349b5ac5b8a899d578e6d7ff"><div class="ttname"><a href="classFilme.html#a4f6dd476349b5ac5b8a899d578e6d7ff">Filme::setDVD</a></div><div class="ttdeci">void setDVD()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:11</div></div>
+<div class="ttc" id="aclassFilme_html_a6169e56da444f25679cb14df7f065725"><div class="ttname"><a href="classFilme.html#a6169e56da444f25679cb14df7f065725">Filme::setFitaVideo</a></div><div class="ttdeci">void setFitaVideo()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:15</div></div>
+<div class="ttc" id="aclassFilme_html_a9b600c9c211038052bb6426718611cff"><div class="ttname"><a href="classFilme.html#a9b600c9c211038052bb6426718611cff">Filme::Filme</a></div><div class="ttdeci">Filme()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:3</div></div>
+<div class="ttc" id="aclassFilme_html_acf4af0c9b7964eefceb0e288e6d5915a"><div class="ttname"><a href="classFilme.html#acf4af0c9b7964eefceb0e288e6d5915a">Filme::diminuiUnidadesDisponiveis</a></div><div class="ttdeci">void diminuiUnidadesDisponiveis()</div><div class="ttdef"><b>Definition:</b> Filme.cpp:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

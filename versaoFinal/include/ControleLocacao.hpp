@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include <vector>
+#include <stdexcept>
+#include <bitset>    
 
 /*************************************************************
  * Classe Controle Locação que irá armazenar todos os clientes

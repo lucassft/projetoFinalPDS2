@@ -13,8 +13,8 @@ void Cliente::clienteAluga(DVD& dvdSistema, FitaVideo& fitaVideoSistema) {
 		if (dvdSistema.verificaSaldoDVD(dvdSistema, inputCodigoFilmeAlugado)) {
 			dvdSistema.clienteAlugaDVD(dvdSistema, inputCodigoFilmeAlugado);
 			_DVDsAlugados.push_back(inputCodigoFilmeAlugado);
-		} else if (fitaVideoSistema.verificaSaldoFitaVideo(inputCodigoFilmeAlugado)) {
-		fitaVideoSistema.clienteAlugaFitaVideo(inputCodigoFilmeAlugado);
+		} else if (fitaVideoSistema.verificaSaldoFitaVideo(fitaVideoSistema, inputCodigoFilmeAlugado)) {
+		fitaVideoSistema.clienteAlugaFitaVideo(fitaVideoSistema, inputCodigoFilmeAlugado);
 		_FitaVideoAlugadas.push_back(inputCodigoFilmeAlugado);
 		}
 	std::cout << "ERRO: Filme <codigo> inexistente."
@@ -27,8 +27,8 @@ void Cliente::clienteAlugaCodigo(int codigoFilme, DVD& dvdSistema, FitaVideo& fi
 	if (dvdSistema.verificaSaldoDVD(dvdSistema, codigoFilme)) {
 		dvdSistema.clienteAlugaDVD(dvdSistema, codigoFilme);
 		_DVDsAlugados.push_back(codigoFilme);
-	} else if (fitaVideoSistema.verificaSaldoFitaVideo(codigoFilme)) {
-	fitaVideoSistema.clienteAlugaFitaVideo(codigoFilme);
+	} else if (fitaVideoSistema.verificaSaldoFitaVideo(fitaVideoSistema, codigoFilme)) {
+	fitaVideoSistema.clienteAlugaFitaVideo(fitaVideoSistema, codigoFilme);
 	_FitaVideoAlugadas.push_back(codigoFilme);
 	}
 }
@@ -39,23 +39,23 @@ void Cliente::clienteDevolve(DVD& dvdSistema, FitaVideo& fitaVideoSistema) {
 	if (tamFitaVideoAlugadas > 0 || tamFitaVideoAlugadas > 0) {
 		imprimeCliente(); std::cout << " devolveu os filmes: " << std::endl;
 		if (tamDVDsAlugados > 0 ) {
-			for (int i = 0; i < dvdSistema.qtdDVDsCadastrados(); i++) {
+			for (unsigned int i = 0; i < dvdSistema.qtdDVDsCadastrados(); i++) {
 				for (unsigned int j = 0; j < _DVDsAlugados.size(); j++) {
 					if (dvdSistema.getDVDsCadastradosCodigoFilme(i) == _DVDsAlugados[j])
 					std::cout << _DVDsAlugados[j] << " ";
-					dvdSistema.retornaDevolucaoDVD(_DVDsAlugados[j], 3);
+					dvdSistema.retornaDevolucaoDVD(dvdSistema, _DVDsAlugados[j], 3); // obs. 3 = 3 dias alugado
 				}
 			}
 		} else std::cout << "nenhum DVD foi alugado." << std::endl;
 		if (tamFitaVideoAlugadas > 0) {
 		for (int i = 0; i < dvdSistema.qtdDVDsCadastrados(); i++) {
 				for (int j = 0; j < _FitaVideoAlugadas.size(); j++) {
-					if (fitaVideoSistema.getFitaVideoCadastradaCodigoFilme(i) == _DVDsAlugados[j])
+					if (fitaVideoSistema.getFitaVideoCadastradaCodigoFilme(fitaVideoSistema, i) == _DVDsAlugados[j])
 					std::cout << _FitaVideoAlugadas[j] << " ";
-					dvdSistema.retornaDevolucaoDVD(_FitaVideoAlugadas[j], 3);
+					dvdSistema.retornaDevolucaoDVD(dvdSistema, _DVDsAlugados[j], 3); // obs. 3 = 3 dias alugado
 				}
 			}
-		} else std::cout << "nenhuma fita de vídeo foi alugada." << std::endl;
+		} else std::cout << "nenhuma fita de vídeo foi alugada." << std::endl; 
 	}
 }
 
