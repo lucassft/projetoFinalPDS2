@@ -1,4 +1,4 @@
-O projeto está estrutura da seguinte forma:
+O projeto está estruturado da seguinte forma:
 
 versaoFinal
 ├── Makefile
